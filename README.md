@@ -39,9 +39,10 @@ makepkg -si
 [vesktop](https://vesktop.vencord.dev/install/linux/)
 [gitui](https://github.com/gitui-org/gitui?tab=readme-ov-file#6--installation-top-)
 [zen](https://aur.archlinux.org/packages/zen-browser-bin)
+[ncspot](https://github.com/hrkfdn/ncspot)
 
 ```shell
-sudo pacman -S yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat gitui zen-browser-bin vesktop
+sudo pacman -S yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat gitui zen-browser-bin vesktop ncspot
 ```
 
 ### .dotfiles
