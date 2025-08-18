@@ -16,8 +16,8 @@ function y
     end
     rm -f -- "$tmp"
 end
+thefuck --alias | source
 
 alias cat=bat
 alias cd=z
 alias ssh-server='ssh debian@simboi.com -p 16922'
-
