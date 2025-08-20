@@ -39,10 +39,21 @@ makepkg -si
 [vesktop](https://vesktop.vencord.dev/install/linux/)
 [gitui](https://github.com/gitui-org/gitui?tab=readme-ov-file#6--installation-top-)
 [zen](https://aur.archlinux.org/packages/zen-browser-bin)
-[ncspot](https://github.com/hrkfdn/ncspot)
+[spotify](https://wiki.archlinux.org/title/Spotify)
 
 ```shell
-sudo pacman -S yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat gitui zen-browser-bin vesktop ncspot
+sudo pacman -S yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat gitui zen-browser-bin vesktop spotify-launcher
+```
+
+[spicetify](https://spicetify.app/docs/advanced-usage/installation)
+
+```shell
+# run spotify-launcher atleast once to install the current spotify version
+spotify-launcher
+```
+
+```shell
+yay -S spicetify-cli
 ```
 
 ### .dotfiles
@@ -54,4 +65,10 @@ sudo pacman -S stow
 git clone https://github.com/SimBoi/dotfiles .dotfiles
 cd .dotfiles
 stow -t ~ */
+```
+
+enable spicetify
+
+```shell
+spicetify backup apply
 ```
