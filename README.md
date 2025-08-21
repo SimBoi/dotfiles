@@ -10,42 +10,49 @@ Browser | Zen
 
 ## 🚀 Installation
 
+This assumes a working installation of CachyOS + Hyprland with all the default packages that come with it.
+
 ### Packages
 
-[rustup](https://wiki.archlinux.org/title/Rust)
+CLI Tools:
+
+* [yay](https://github.com/Jguer/yay) - AUR helper
+* [ripgrip](https://github.com/BurntSushi/ripgrep) - better grip
+* [bat](https://github.com/sharkdp/bat?tab=readme-ov-file) - better cat
+* [fd](https://github.com/sharkdp/fd) - better find
+* [fzf](https://github.com/junegunn/fzf) - fuzzy finder
+* [zoxide](https://github.com/ajeetdsouza/zoxide) - better cd
+
+TUI Apps:
+
+* [yazi](https://yazi-rs.github.io/docs/installation) - tui file manager
+* [lazygit](https://github.com/jesseduffield/lazygit) - git tui
+
+GUI Apps:
+
+* [vesktop](https://vesktop.vencord.dev/install/linux/) - modded discord
+* [zen](https://aur.archlinux.org/packages/zen-browser-bin) - browser
+* [spotify](https://wiki.archlinux.org/title/Spotify) - music
+* [spicetify](https://spicetify.app/docs/advanced-usage/installation) - spotify modding
+* [helvum](https://github.com/relulz/helvum) - patchbay for pipewire
 
 ```shell
-sudo pacman -S rustup
+# rustup for compiling rust applications
+sudo pacman -Sy rustup
 rustup default stable
 ```
 
-[yay](https://github.com/Jguer/yay)
-
 ```shell
-sudo pacman -S --needed git base-devel
+# yay for installing AUR packages
+sudo pacman -Sy --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
 
-[wl-clipboard](https://github.com/bugaevc/wl-clipboard)
-[7zip](https://wiki.archlinux.org/title/7-Zip)
-[ripgrip](https://github.com/BurntSushi/ripgrep)
-[bat](https://github.com/sharkdp/bat?tab=readme-ov-file)
-[fd](https://github.com/sharkdp/fd)
-[fzf](https://github.com/junegunn/fzf)
-[zoxide](https://github.com/ajeetdsouza/zoxide)
-[yazi](https://yazi-rs.github.io/docs/installation)
-[vesktop](https://vesktop.vencord.dev/install/linux/)
-[gitui](https://github.com/gitui-org/gitui?tab=readme-ov-file#6--installation-top-)
-[zen](https://aur.archlinux.org/packages/zen-browser-bin)
-[spotify](https://wiki.archlinux.org/title/Spotify)
-
 ```shell
-sudo pacman -S yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat gitui zen-browser-bin vesktop spotify-launcher
+yay -Sy yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat lazygit zen-browser-bin vesktop spotify-launcher helvum
 ```
-
-[spicetify](https://spicetify.app/docs/advanced-usage/installation)
 
 ```shell
 # run spotify-launcher atleast once to install the current spotify version
@@ -53,7 +60,8 @@ spotify-launcher
 ```
 
 ```shell
-yay -S spicetify-cli
+# spotify modding using spicetify
+yay -Sy spicetify-cli
 ```
 
 ### .dotfiles
