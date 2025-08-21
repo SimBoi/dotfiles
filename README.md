@@ -29,7 +29,7 @@ TUI Apps:
 * [lazygit](https://github.com/jesseduffield/lazygit) - git tui
 
 GUI Apps:
-
+* [ghostty](https://ghostty.org/docs/install/binary#linux-(official))
 * [vesktop](https://vesktop.vencord.dev/install/linux/) - modded discord
 * [zen](https://aur.archlinux.org/packages/zen-browser-bin) - browser
 * [spotify](https://wiki.archlinux.org/title/Spotify) - music
@@ -51,7 +51,7 @@ makepkg -si
 ```
 
 ```shell
-yay -Sy yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat lazygit zen-browser-bin vesktop spotify-launcher helvum
+yay -Sy ghostty yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat lazygit zen-browser-bin vesktop spotify-launcher helvum
 ```
 
 ```shell
