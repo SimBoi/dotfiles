@@ -16,27 +16,28 @@ This assumes a working installation of CachyOS + Hyprland with all the default p
 
 CLI Tools:
 
-* [yay](https://github.com/Jguer/yay) - AUR helper
-* [ripgrip](https://github.com/BurntSushi/ripgrep) - better grip
-* [bat](https://github.com/sharkdp/bat?tab=readme-ov-file) - better cat
-* [fd](https://github.com/sharkdp/fd) - better find
-* [fzf](https://github.com/junegunn/fzf) - fuzzy finder
-* [zoxide](https://github.com/ajeetdsouza/zoxide) - better cd
+* [yay](https://github.com/Jguer/yay): AUR helper
+* [ripgrip](https://github.com/BurntSushi/ripgrep): better grip
+* [bat](https://github.com/sharkdp/bat?tab=readme-ov-file): better cat
+* [fd](https://github.com/sharkdp/fd): better find
+* [fzf](https://github.com/junegunn/fzf): fuzzy finder
+* [zoxide](https://github.com/ajeetdsouza/zoxide): better cd
 
 TUI Apps:
 
-* [yazi](https://yazi-rs.github.io/docs/installation) - tui file manager
-* [lazygit](https://github.com/jesseduffield/lazygit) - git tui
+* [yazi](https://yazi-rs.github.io/docs/installation): tui file manager
+* [lazygit](https://github.com/jesseduffield/lazygit): git tui
 
 GUI Apps:
-* [ghostty](https://ghostty.org/docs/install/binary#linux-(official))
-* [vs code](https://aur.archlinux.org/packages/visual-studio-code-bin)
-* [unity hub](https://aur.archlinux.org/packages/unityhub)
-* [vesktop](https://vesktop.vencord.dev/install/linux/) - modded discord
-* [zen](https://aur.archlinux.org/packages/zen-browser-bin) - browser
-* [spotify](https://wiki.archlinux.org/title/Spotify) - music
-* [spicetify](https://spicetify.app/docs/advanced-usage/installation) - spotify modding
-* [helvum](https://github.com/relulz/helvum) - patchbay for pipewire
+* [ghostty](https://ghostty.org/docs/install/binary#linux-(official)): terminal emulator
+* [vs code](https://aur.archlinux.org/packages/visual-studio-code-bin): code editor
+* [unity hub](https://aur.archlinux.org/packages/unityhub): game engine
+* [bitwarden](https://archlinux.org/packages/extra/x86_64/bitwarden/): password manager
+* [vesktop](https://vesktop.vencord.dev/install/linux/): modded discord
+* [zen](https://aur.archlinux.org/packages/zen-browser-bin): browser
+* [spotify](https://wiki.archlinux.org/title/Spotify): music
+* [spicetify](https://spicetify.app/docs/advanced-usage/installation): spotify modding
+* [helvum](https://github.com/relulz/helvum): patchbay for pipewire
 
 ```shell
 # rustup for compiling rust applications
@@ -53,7 +54,7 @@ makepkg -si
 ```
 
 ```shell
-yay -Sy ghostty visual-studio-code-bin unityhub yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat lazygit zen-browser-bin vesktop spotify-launcher helvum
+yay -Sy ghostty visual-studio-code-bin unityhub bitwarden yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat lazygit zen-browser-bin vesktop spotify-launcher helvum
 ```
 
 ```shell
