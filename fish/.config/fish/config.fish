@@ -21,3 +21,6 @@ thefuck --alias | source
 alias cat=bat
 alias cd=z
 alias ssh-server='ssh debian@simboi.com -p 16922'
+
+# uv
+fish_add_path "/home/sim/.local/share/../bin"
