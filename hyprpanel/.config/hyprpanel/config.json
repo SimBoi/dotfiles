@@ -1,0 +1,161 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "theme.font.name": "Terminess Nerd Font",
+  "theme.font.label": "Terminess Nerd Font Bold",
+  "theme.font.size": "1.2rem",
+  "theme.font.weight": 500,
+  "menus.transition": "crossfade",
+  "menus.transitionTime": 100,
+  "theme.bar.menus.enableShadow": false,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "systray",
+        "volume",
+        "bluetooth",
+        "network",
+        "clock",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.bar.floating": false,
+  "theme.bar.location": "top",
+  "bar.autoHide": "fullscreen",
+  "theme.bar.border.location": "horizontal",
+  "theme.bar.enableShadow": false,
+  "theme.bar.layer": "top",
+  "bar.launcher.autoDetectIcon": false,
+  "theme.bar.buttons.dashboard.enableBorder": true,
+  "theme.bar.buttons.workspaces.enableBorder": true,
+  "bar.workspaces.show_icons": false,
+  "bar.workspaces.workspaceMask": false,
+  "bar.workspaces.show_numbered": false,
+  "bar.workspaces.showWsIcons": false,
+  "bar.workspaces.applicationIconOncePerWorkspace": true,
+  "theme.bar.buttons.windowtitle.enableBorder": true,
+  "bar.windowtitle.custom_title": true,
+  "bar.windowtitle.icon": true,
+  "theme.bar.buttons.volume.enableBorder": true,
+  "bar.windowtitle.middleClick": "hyprctl dispatch killactive",
+  "bar.volume.label": true,
+  "theme.bar.buttons.network.enableBorder": true,
+  "bar.network.showWifiInfo": true,
+  "theme.bar.buttons.bluetooth.enableBorder": true,
+  "bar.bluetooth.label": false,
+  "bar.network.label": false,
+  "theme.bar.buttons.battery.enableBorder": true,
+  "bar.battery.hideLabelWhenFull": true,
+  "bar.battery.label": true,
+  "theme.bar.buttons.systray.enableBorder": true,
+  "theme.bar.buttons.clock.enableBorder": true,
+  "bar.clock.showTime": true,
+  "bar.clock.showIcon": true,
+  "theme.bar.buttons.media.enableBorder": true,
+  "bar.media.show_label": true,
+  "bar.media.truncation": true,
+  "bar.media.show_active_only": false,
+  "theme.bar.buttons.notifications.enableBorder": true,
+  "bar.notifications.show_total": true,
+  "menus.media.displayTime": true,
+  "menus.media.displayTimeTooltip": false,
+  "notifications.position": "top right",
+  "theme.osd.orientation": "horizontal",
+  "theme.osd.location": "bottom",
+  "theme.osd.enableShadow": false,
+  "theme.osd.border.size": "0.1em",
+  "theme.osd.muted_zero": false,
+  "menus.volume.raiseMaximumVolume": true,
+  "menus.clock.time.military": false,
+  "menus.clock.time.hideSeconds": false,
+  "menus.clock.weather.enabled": false,
+  "menus.clock.weather.unit": "metric",
+  "menus.dashboard.controls.enabled": true,
+  "menus.dashboard.stats.enable_gpu": true,
+  "menus.dashboard.shortcuts.left.shortcut3.command": "vesktop",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "Z",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "zen-browser",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Zen Browser",
+  "theme.bar.buttons.modules.microphone.enableBorder": true,
+  "theme.bar.buttons.modules.ram.enableBorder": true,
+  "theme.bar.buttons.modules.cpu.enableBorder": true,
+  "theme.bar.buttons.modules.cpuTemp.enableBorder": true,
+  "theme.bar.buttons.modules.storage.enableBorder": true,
+  "theme.bar.buttons.modules.netstat.enableBorder": true,
+  "theme.bar.buttons.modules.kbLayout.enableBorder": true,
+  "theme.bar.buttons.modules.updates.enableBorder": true,
+  "bar.customModules.updates.pollingInterval": 21600000,
+  "bar.customModules.updates.extendedTooltip": true,
+  "theme.bar.buttons.modules.submap.enableBorder": true,
+  "theme.bar.buttons.modules.weather.enableBorder": false,
+  "theme.bar.buttons.modules.hyprsunset.enableBorder": true,
+  "theme.bar.buttons.modules.hypridle.enableBorder": true,
+  "theme.bar.buttons.modules.cava.enableBorder": true,
+  "theme.bar.buttons.modules.worldclock.enableBorder": true,
+  "theme.bar.buttons.modules.power.enableBorder": true,
+  "menus.power.showLabel": true,
+  "theme.bar.menus.monochrome": false,
+  "wallpaper.pywal": false,
+  "wallpaper.image": "/home/sim/.dotfiles/hypr/.config/hypr/wallpapers/cyberpunk-hyprpaper.jpg",
+  "theme.bar.menus.cards": "#1e1e2e",
+  "theme.bar.menus.border.radius": "0",
+  "theme.bar.menus.popover.radius": "0",
+  "theme.bar.menus.popover.background": "#181824",
+  "theme.bar.menus.switch.radius": "0",
+  "theme.bar.menus.switch.slider_radius": "0",
+  "theme.bar.menus.switch.puck": "#454759",
+  "theme.bar.menus.buttons.radius": "0",
+  "theme.bar.menus.progressbar.radius": "0",
+  "theme.bar.menus.slider.progress_radius": "0",
+  "theme.bar.menus.slider.slider_radius": "0",
+  "theme.bar.menus.scroller.radius": "0",
+  "theme.bar.menus.tooltip.radius": "0",
+  "theme.matugen_settings.mode": "dark",
+  "theme.bar.menus.card_radius": "0",
+  "theme.bar.menus.border.size": "2",
+  "wallpaper.enable": true,
+  "theme.bar.buttons.style": "default",
+  "theme.bar.transparent": false,
+  "theme.bar.opacity": 70,
+  "theme.bar.buttons.monochrome": false
+}
