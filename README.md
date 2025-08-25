@@ -3,16 +3,20 @@
 What | I use
 -----|-----
 System | CachyOS
+Window Manager | Hyprland
 Shell | fish
 Terminal | Ghostty
 File Manager | Yazi
 Browser | Zen
 
-## 🚀 Installation
-
-This assumes a working installation of CachyOS + Hyprland with all the default packages that come with it.
-
 ### Packages
+
+This assumes a working installation of CachyOS with all the default packages + from Hyprlands section:
+* hyprland
+* xdg-desktop-portal-hyprland
+* sddm
+* xorg-xwayland
+* wl-clipboard
 
 CLI Tools:
 
@@ -28,7 +32,6 @@ TUI Apps:
 
 * [yazi](https://yazi-rs.github.io/docs/installation): tui file manager
 * [lazygit](https://github.com/jesseduffield/lazygit): git tui
-* [bluetui](https://github.com/pythops/bluetui): tui bluetooth manager
 
 GUI Apps:
 
@@ -41,19 +44,26 @@ GUI Apps:
 * [spotify](https://wiki.archlinux.org/title/Spotify): music
 * [spicetify](https://spicetify.app/docs/advanced-usage/installation): spotify modding
 * [helvum](https://github.com/relulz/helvum): patchbay for pipewire
-* [kolourpaint](https://apps.kde.org/kolourpaint/)
+* [kolourpaint](https://apps.kde.org/kolourpaint/): basic paint
+* [gimp](): advanced paint
 * [loupe](https://apps.gnome.org/Loupe/): image viewer
 * [nwg-look](https://github.com/nwg-piotr/nwg-look): gtk ricing
 * qt5ct + qt6ct + kvantum: qt ricing
 * [wf-osk](https://github.com/WayfireWM/wf-osk): on-screen keyboard
+* [gnome-disk-utility](https://apps.gnome.org/DiskUtility/): disk and partition management
+* [clapper](https://github.com/Rafostar/clapper?tab=readme-ov-file): video player
+* [valent](https://aur.archlinux.org/valent-git.git): gtk implementation of kde connect without the million kde dependencies
 
 DE (Hyprland):
 
+* [xdg-desktop-portal-gtk](https://wiki.hypr.land/Hypr-Ecosystem/xdg-desktop-portal-hyprland/): fallback for xdg-desktop-portal-hyprland
+* [hyprpolkitagent](): gui authentication handler
 * [hyprlock](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/): lock screen
-* [hypridle](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/): lock screen on idle
+* [hypridle](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/): lock/suspend on idle
 * [hyprpanel](https://hyprpanel.com/getting_started/hyprpanel.html): top bar, notifications, osd, and more
 * hyprpanel optional: python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 
+## 🚀 Installation
 
 ```shell
 # rustup for compiling rust applications
@@ -67,11 +77,26 @@ sudo pacman -Sy --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+cd ..
+rm -r yay
 ```
 
+### .dotfiles
+
+create symlinks for the dotfiles using stow
+
 ```shell
-yay -Sy ghostty visual-studio-code-bin unityhub bitwarden yazi bluetui wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint loupe nwg-look qt5ct qt6ct kvantum wf-osk hyprlock hypridle ags-hyprpanel-git
-yay -S --needed python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
+yay -Sy stow
+git clone https://github.com/SimBoi/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+stow -t ~ */
+```
+
+### Packages
+
+```shell
+yay -Sy ghostty visual-studio-code-bin unityhub bitwarden yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wf-osk xdg-desktop-portal-gtk hyprpolkitagent hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper valent-git
+yay -Sy --needed python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 
 ```shell
@@ -82,21 +107,12 @@ spotify-launcher
 ```shell
 # spotify modding using spicetify
 yay -Sy spicetify-cli
-```
-
-### .dotfiles
-
-create symlinks for the dotfiles using stow
-
-```shell
-sudo pacman -S stow
-git clone https://github.com/SimBoi/dotfiles .dotfiles
-cd .dotfiles
-stow -t ~ */
-```
-
-enable spicetify
-
-```shell
 spicetify backup apply
+```
+
+enable ssh server on startup for remote access
+
+```shell
+sudo systemctl enable sshd
+sudo ufw allow ssh
 ```
