@@ -3,7 +3,7 @@ configuration {
   display-window: "Windows: ";
   drun-display-format: "{name}";
   modi: "window,run,drun";
-  font: "TerminessNerdFont Bold 16";
+  font: "RajdhaniNerdFont Bold 16";
   show-icons: true;
 }
 
@@ -80,7 +80,7 @@ clock {
 
 textbox-label {
     expand: true;
-    content: "ENTRY TIME REMAINING";
+    content: "BREACH TIME REMAINING";
     padding: 10 0 10 0;
 }
 
@@ -108,9 +108,10 @@ listbox {
 
 textbox-buffer {
     expand: false;
+    font: "RajdhaniNerdFont Bold 20";
     content: "BUFFER";
     padding: 5;
-    margin: 10 0 10 20;
+    margin: 5 0 6 20;
 }
 
 inputbar-wrapper {
@@ -145,9 +146,9 @@ listview-label {
 }
 
 textbox-listview-icon {
+    padding: 5 0 0 0;
     expand: false;
     content: "󱇯  ";
-    font: "TerminessNerdFont Bold 16";
 }
 
 textbox-listview-label {
@@ -167,7 +168,6 @@ element {
 }
 
 element-icon {
-    text-color: @cyan;
     padding: 0 12 0 0;
     size: 24;
 }
@@ -178,6 +178,10 @@ element.normal {
 
 element.selected {
     background-color: #c9ff5e33;
+}
+
+element-text {
+    text-color: @white;
 }
 
 element-text.selected {
