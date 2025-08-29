@@ -27,6 +27,8 @@ CLI Tools:
 * [fzf](https://github.com/junegunn/fzf): fuzzy finder
 * [zoxide](https://github.com/ajeetdsouza/zoxide): better cd
 * [playerctl](https://github.com/altdesktop/playerctl): control media players
+* [wl-clip-persist](): persist clipboard after app exits
+* [cliphist](): clipboard history
 
 TUI Apps:
 
@@ -52,7 +54,10 @@ GUI Apps:
 * [wf-osk](https://github.com/WayfireWM/wf-osk): on-screen keyboard
 * [gnome-disk-utility](https://apps.gnome.org/DiskUtility/): disk and partition management
 * [clapper](https://github.com/Rafostar/clapper?tab=readme-ov-file): video player
+* [stremio](): media streaming
+* [jellyfin-media-player](): self-hosted media streaming
 * [valent](https://aur.archlinux.org/valent-git.git): gtk implementation of kde connect without the million kde dependencies
+* [betterbird](https://aur.archlinux.org/packages/betterbird-bin/): mail client
 
 DE (Hyprland):
 
@@ -95,7 +100,7 @@ stow -t ~ */
 ### Packages
 
 ```shell
-yay -Sy ghostty visual-studio-code-bin unityhub bitwarden yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wf-osk xdg-desktop-portal-gtk hyprpolkitagent hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper valent-git
+yay -Sy ghostty visual-studio-code-bin unityhub bitwarden yazi wl-clipboard ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick bat lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wf-osk xdg-desktop-portal-gtk hyprpolkitagent hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin
 yay -Sy --needed python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 
@@ -116,3 +121,9 @@ enable ssh server on startup for remote access
 sudo systemctl enable sshd
 sudo ufw allow ssh
 ```
+
+### Manual Configuration
+
+* zen
+* vesktop
+* betterbird

@@ -221,5 +221,6 @@
     "▆",
     "▇",
     "█"
-  ]
+  ],
+  "bar.customModules.cava.bars": 10
 }
