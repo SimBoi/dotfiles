@@ -55,7 +55,7 @@ body {
 
     /* transparency/blur options */
     /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
-    --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
+    --transparency-tweaks: on; /* off: no changes, on: remove some elements for better transparency */
     --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
     --panel-blur: off; /* off: no changes, on: blur the background of panels */
     --blur-amount: 12px; /* amount of blur */
@@ -73,9 +73,10 @@ body {
     --ascii-loader: system24; /* off: default, system24: use system24 ascii loader, cats: use cats loader */
 
     /* panel labels */
-    --panel-labels: on; /* off: default, on: add labels to panels */
-    --label-color: var(--text-muted); /* color of labels */
-    --label-font-weight: 600; /* font weight of labels */
+    --panel-labels: off; /* off: default, on: add labels to panels */
+    --label-color: var(--active); /* color of labels */
+    --label-font-size: 18px;
+    --label-font-weight: 800; /* font weight of labels */
 }
 
 /* color options */
@@ -83,7 +84,7 @@ body {
     --colors: on; /* off: discord default colors, on: midnight custom colors */
 
     /* text colors */
-    --text-0: var(--bg-4); /* text on colored elements */
+    --text-0: oklch(17% 0.01886 299.723); /* text on colored elements */
     --text-1: oklch(100% 0 0); /* other normally white text */
     --text-2: var(--yellow-1); /* headings and important text */
     --text-3: oklch(90% 0 0); /* normal text */
@@ -94,7 +95,7 @@ body {
     --bg-1: oklch(29% 0.01886 299.723); /* dark buttons when clicked */
     --bg-2: oklch(25% 0.01886 299.723); /* dark buttons */
     --bg-3: oklch(21% 0.01886 299.723); /* spacing, secondary elements */
-    --bg-4: oklch(17% 0.01886 299.723); /* main background color */
+    --bg-4: oklch(17% 0.01886 299.723 / 0.7); /* main background color */
     --hover: oklch(90% 0.21108 111.514 / 0.1); /* channels and buttons when hovered */
     --active: oklch(90% 0.21108 111.514 / 0.2); /* channels and buttons when clicked or selected */
     --active-2: oklch(90% 0.21108 111.514 / 0.2); /* extra state for transparent buttons */
@@ -121,8 +122,8 @@ body {
 
     /* border colors */
     --border-light: var(--hover); /* general light border color */
-    --border: var(--active); /* general normal border color */
-    --border-hover: var(--accent-2); /* border color of panels when hovered */
+    --border: oklch(60% 0.17441 119.489); /* general normal border color */
+    --border-hover: var(--blue-3); /* border color of panels when hovered */
     --button-border: hsl(220, 0%, 100%, 0.1); /* neutral border color of buttons */
 
     /* base colors */
@@ -272,9 +273,7 @@ body {
 
 /* panel-labels.css */
 body {
-    --label-color: var(--text-muted);
     --label-hover-color: var(--brand-360);
-    --label-font-weight: 600;
 }
 
 @property --panel-labels {
@@ -308,7 +307,7 @@ body {
                 background-color: var(--bg-base-primary);
                 padding: 0 4px;
                 z-index: 100;
-                font-size: 16px;
+                font-size: var(--label-font-size);
                 transition: color var(--border-hover-transition);
             }
 

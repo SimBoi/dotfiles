@@ -1,0 +1,25 @@
+
+[Default Applications]
+x-scheme-handler/discord=vesktop.desktop
+text/plain=org.gnome.TextEditor.desktop
+text/tcl=org.gnome.TextEditor.desktop
+text/html=org.gnome.TextEditor.desktop
+text/vcard=org.gnome.TextEditor.desktop
+text/x-csrc=org.gnome.TextEditor.desktop
+text/x-tex=org.gnome.TextEditor.desktop
+text/calendar=org.gnome.TextEditor.desktop
+text/x-moc=org.gnome.TextEditor.desktop
+text/x-pascal=org.gnome.TextEditor.desktop
+text/x-makefile=org.gnome.TextEditor.desktop
+application/x-spkac+base64=org.gnome.TextEditor.desktop
+application/x-zerosize=org.gnome.TextEditor.desktop
+application/sdp=org.gnome.TextEditor.desktop
+application/xml=org.gnome.TextEditor.desktop
+application/x-mswinurl=org.gnome.TextEditor.desktop
+application/postscript=org.gnome.TextEditor.desktop
+application/x-bat=org.gnome.TextEditor.desktop
+application/x-pem-file=org.gnome.TextEditor.desktop
+application/x-shellscript=org.gnome.TextEditor.desktop
+application/vnd.font-fontforge-sfd=org.gnome.TextEditor.desktop
+application/x-cue=org.gnome.TextEditor.desktop
+application/vnd.apple.mpegurl=org.gnome.TextEditor.desktop

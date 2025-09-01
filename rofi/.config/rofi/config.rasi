@@ -10,29 +10,29 @@ configuration {
 @theme "/dev/null"
 
 * {
-  red      : #de524a;
-  lred     : #ff7162;
-  green    : #22d87a;
-  lgreen   : #c9ee5e;
-  yellow   : #ecc747;
-  lyellow  : #edd682;
-  blue     : #2366c3;
-  lblue    : #7fb4ff;
-  magenta  : #9132e8;
-  lmagenta : #c17fff;
-  cyan     : #55e7f0;
-  lcyan    : #a7ecef;
+  red      : #f83d59;
+  lred     : #ff6377;
+  green    : #4bde7b;
+  lgreen   : #72ff9a;
+  yellow   : #d1ee59;
+  lyellow  : #f1ff7d;
+  blue     : #2ab9ff;
+  lblue    : #58dcff;
+  magenta  : #f792f8;
+  lmagenta : #ffb2ff;
+  cyan     : #65f8f8;
+  lcyan    : #8affff;
 
-  white    : #e5e9e6;
-  black    : #130912;
+  white    : #ffffff;
+  black    : #110e16;
 
   bg: @black;
-  fg: @lgreen;
+  fg: @yellow;
 
   disabled : #5d5d5d;
 
   background-color: transparent;
-  color: @lgreen;
+  color: @yellow;
 
   margin: 0;
   padding: 0;
@@ -51,7 +51,7 @@ mainbox {
     anchor: center;
     margin: calc(50% - 360) calc(50% - 640);
     border: 2;
-    border-color: @lgreen;
+    border-color: @yellow;
     orientation: horizontal;
     children: [ "imagebox", "listbox" ];
 }
@@ -72,7 +72,7 @@ clock {
     expand: false;
     padding: 15;
     border: 2 0 2 0;
-    border-color: @lgreen;
+    border-color: @yellow;
     orientation: horizontal;
     background-color: #c9ff5e33;
     children: [ "textbox-label", "textbox-number" ];
@@ -88,7 +88,7 @@ textbox-number {
     expand: false;
     content: "N/A";
     border: 2;
-    border-color: @lgreen;
+    border-color: @yellow;
     padding: 10 30 10 30;
 }
 
@@ -117,7 +117,7 @@ textbox-buffer {
 inputbar-wrapper {
     padding: 5 0 5 0;
     border: 2 0 2 0;
-    border-color: @lgreen;
+    border-color: @yellow;
     background-color: #c9ff5e33;
     expand: false;
     children: [ "inputbar" ];
@@ -127,7 +127,7 @@ inputbar {
     border: 2;
     padding: 10 25 10 25;
     margin: 10 25 10 25;
-    border-color: @lgreen;
+    border-color: @yellow;
     background-color: @bg;
 }
 
@@ -141,7 +141,7 @@ listview-label {
     margin: 25 25 0 25;
     padding: 10 8 10 15;
     border: 2 2 0 2;
-    border-color: @lgreen;
+    border-color: @yellow;
     children: [ "textbox-listview-icon", "textbox-listview-label" ];
 }
 
@@ -160,7 +160,7 @@ listview {
     margin: 0 25 25 25;
     padding: 0;
     border: 2;
-    border-color: @lgreen;
+    border-color: @yellow;
 }
 
 element {

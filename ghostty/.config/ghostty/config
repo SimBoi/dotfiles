@@ -1,43 +1,26 @@
-# This is the configuration file for Ghostty.
-#
-# This template file has been automatically created at the following
-# path since Ghostty couldn't find any existing config files on your system:
-#
-#   /home/sim/.config/ghostty/config
-#
-# The template does not set any default options, since Ghostty ships
-# with sensible defaults for all options. Users should only need to set
-# options that they want to change from the default.
-#
-# Run `ghostty +show-config --default --docs` to view a list of
-# all available config options and their default values.
-#
-# Additionally, each config option is also explained in detail
-# on Ghostty's website, at https://ghostty.org/docs/config.
+clipboard-read = allow
+clipboard-write = allow
 
-# Config syntax crash course
-# ==========================
-# # The config file consists of simple key-value pairs,
-# # separated by equals signs.
 font-family = DMMonoNerdFont
-# window-padding-x = 2
-#
-# # Spacing around the equals sign does not matter.
-# # All of these are identical:
-# key=value
-# key= value
-# key =value
-# key = value
-#
-# # Any line beginning with a # is a comment. It's not possible to put
-# # a comment after a config option, since it would be interpreted as a
-# # part of the value. For example, this will have a value of "#123abc":
-# background = #123abc
-#
-# # Empty values are used to reset config keys to default.
-# key =
-#
-# # Some config options have unique syntaxes for their value,
-# # which is explained in the docs for that config option.
-# # Just for example:
-# resize-overlay-duration = 4s 200ms
+background-opacity = 0.8
+theme = niji
+background = #110e16
+foreground = #d1ee59
+
+palette = 0=#110e16
+palette = 1=#f83d59
+palette = 2=#4bde7b
+palette = 3=#d1ee59
+palette = 4=#2ab9ff
+palette = 5=#f792f8
+palette = 6=#65f8f8
+palette = 7=#dedede
+
+palette = 8=#232029
+palette = 9=#ff6377
+palette = 10=#72ff9a
+palette = 11=#f1ff7d
+palette = 12=#58dcff
+palette = 13=#ffb2ff
+palette = 14=#8affff
+palette = 15=#ffffff
