@@ -1,16 +1,10 @@
-# cyberpunk-2077--breach-protocol README
+# Cyberpunk 2077: Breach Protocol
 
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+VS Code theme inspired by the Cyberpunk 2077 hacking mini-game breach protocol. This is a small part of my Cyberpunk themed Hyprland rice. 
 
 ## For more information
 
-* Visit the [GitHub repo](http://code.visualstudio.com/docs/languages/markdown)
-* [Report issues](https://help.github.com/articles/markdown-basics/)
+* Visit the [GitHub repo](https://github.com/SimBoi/dotfiles/tree/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol)
+* [Report issues](https://github.com/SimBoi/dotfiles/issues)
 
 **Enjoy!**
