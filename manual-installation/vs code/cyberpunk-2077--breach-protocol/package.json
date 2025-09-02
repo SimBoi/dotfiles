@@ -1,0 +1,21 @@
+{
+  "name": "cyberpunk-2077--breach-protocol",
+  "displayName": "Cyberpunk 2077: Breach Protocol",
+  "description": "Cyberpunk 2077 theme inspired by the hacking mini-game breach protocol.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Cyberpunk 2077: Breach Protocol",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Cyberpunk 2077 Breach Protocol-color-theme.json"
+      }
+    ]
+  }
+}
