@@ -8,7 +8,7 @@ background = #110e16
 foreground = #d1ee59
 
 palette = 0=#110e16
-palette = 1=#f83d59
+palette = 1=#ff5d55
 palette = 2=#4bde7b
 palette = 3=#d1ee59
 palette = 4=#2ab9ff
@@ -17,7 +17,7 @@ palette = 6=#65f8f8
 palette = 7=#dedede
 
 palette = 8=#65616d
-palette = 9=#ff6377
+palette = 9=#ff7f74
 palette = 10=#72ff9a
 palette = 11=#f1ff7d
 palette = 12=#58dcff

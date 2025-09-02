@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/SimBoi/dotfiles/tree/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol"
   },
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.103.0"
   },

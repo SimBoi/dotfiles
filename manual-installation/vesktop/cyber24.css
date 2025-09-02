@@ -127,11 +127,11 @@ body {
     --button-border: hsl(220, 0%, 100%, 0.1); /* neutral border color of buttons */
 
     /* base colors */
-    --red-1: oklch(75% 0.22069 18.193);
-    --red-2: oklch(70% 0.22069 18.193);
-    --red-3: oklch(65% 0.22069 18.193);
-    --red-4: oklch(60% 0.22069 18.193);
-    --red-5: oklch(55% 0.22069 18.193);
+    --red-1: oklch(80% 0.20509 26.419);
+    --red-2: oklch(75% 0.20509 26.419);
+    --red-3: oklch(70% 0.20509 26.419);
+    --red-4: oklch(65% 0.20509 26.419);
+    --red-5: oklch(60% 0.20509 26.419);
 
     --green-1: oklch(90% 0.18648 150.389);
     --green-2: oklch(85% 0.18648 150.389);

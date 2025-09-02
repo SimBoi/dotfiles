@@ -10,8 +10,8 @@ configuration {
 @theme "/dev/null"
 
 * {
-  red      : #f83d59;
-  lred     : #ff6377;
+  red      : #ff5d55;
+  lred     : #ff7f74;
   green    : #4bde7b;
   lgreen   : #72ff9a;
   yellow   : #d1ee59;
