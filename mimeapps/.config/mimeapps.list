@@ -23,3 +23,4 @@ application/x-shellscript=org.gnome.TextEditor.desktop
 application/vnd.font-fontforge-sfd=org.gnome.TextEditor.desktop
 application/x-cue=org.gnome.TextEditor.desktop
 application/vnd.apple.mpegurl=org.gnome.TextEditor.desktop
+application/x-code-workspace=code.desktop
