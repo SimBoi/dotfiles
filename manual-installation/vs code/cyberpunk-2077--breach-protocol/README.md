@@ -4,6 +4,20 @@
 
 VS Code theme inspired by the Cyberpunk 2077 hacking mini-game breach protocol. This is a small part of my Cyberpunk themed Hyprland rice. 
 
+## Installation
+
+Linux
+
+```shell
+curl -L -o /tmp/cyberpunk.vsix https://github.com/SimBoi/dotfiles/raw/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol/cyberpunk-2077--breach-protocol-0.0.1.vsix && code --install-extension /tmp/cyberpunk.vsix
+```
+
+Windows
+
+```cmd
+curl -L "https://github.com/SimBoi/dotfiles/raw/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol/cyberpunk-2077--breach-protocol-0.0.1.vsix" -o "%TEMP%\cyberpunk.vsix" && code --install-extension "%TEMP%\cyberpunk.vsix"
+```
+
 ## For more information
 
 * Visit the [GitHub repo](https://github.com/SimBoi/dotfiles/tree/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol)
