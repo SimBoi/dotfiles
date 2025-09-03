@@ -53,7 +53,7 @@ GUI Apps:
 * [loupe](https://apps.gnome.org/Loupe/): image viewer
 * [nwg-look](https://github.com/nwg-piotr/nwg-look): gtk ricing
 * qt5ct + qt6ct + kvantum: qt ricing
-* [wf-osk](https://github.com/WayfireWM/wf-osk): on-screen keyboard
+* [wvkbd](https://github.com/jjsullivan5196/wvkbd): on-screen keyboard
 * [gnome-disk-utility](https://apps.gnome.org/DiskUtility/): disk and partition management
 * [clapper](https://github.com/Rafostar/clapper?tab=readme-ov-file): video player
 * [stremio](https://aur.archlinux.org/packages/stremio): media streaming
@@ -105,7 +105,7 @@ stow -t ~ */
 ### Packages
 
 ```shell
-yay -Sy ghostty visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wf-osk xdg-desktop-portal-gtk hyprpolkitagent hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk selectdefaultapplication-git cartridges
+yay -Sy ghostty visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk hyprpolkitagent hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk selectdefaultapplication-git cartridges
 yay -Sy --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 
