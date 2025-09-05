@@ -21,7 +21,7 @@ This assumes a working installation of CachyOS with all the default packages + f
 CLI Tools:
 
 * [yay](https://github.com/Jguer/yay): AUR helper
-* [ripgrip](https://github.com/BurntSushi/ripgrep): better grip
+* [ripgrep](https://github.com/BurntSushi/ripgrep): better grep
 * [bat](https://github.com/sharkdp/bat?tab=readme-ov-file): better cat
 * [fd](https://github.com/sharkdp/fd): better find
 * [fzf](https://github.com/junegunn/fzf): fuzzy finder
@@ -72,6 +72,7 @@ DE (Hyprland):
 * [hypridle](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/): lock/suspend on idle
 * [ags-hyprpanel-git](https://hyprpanel.com/getting_started/hyprpanel.html): top bar, notifications, osd, and more
 * hyprpanel optional: python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
+* [rofi](https://github.com/davatorium/rofi): app launcher and dmenu
 
 ## 🚀 Installation
 
@@ -105,7 +106,7 @@ stow -t ~ */
 ### Packages
 
 ```shell
-yay -Sy ghostty visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk hyprpolkitagent hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk selectdefaultapplication-git cartridges
+yay -Sy ghostty rofi visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk hyprpolkitagent hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk selectdefaultapplication-git cartridges
 yay -Sy --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 

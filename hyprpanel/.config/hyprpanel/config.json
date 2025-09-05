@@ -68,7 +68,7 @@
   "bar.autoHide": "fullscreen",
   "theme.bar.border.location": "full",
   "theme.bar.enableShadow": false,
-  "theme.bar.layer": "top",
+  "theme.bar.layer": "bottom",
   "bar.launcher.autoDetectIcon": false,
   "theme.bar.buttons.dashboard.enableBorder": true,
   "theme.bar.buttons.workspaces.enableBorder": true,
@@ -519,5 +519,8 @@
   "theme.bar.menus.menu.power.buttons.restart.background": "#ff5c54",
   "theme.bar.menus.menu.power.buttons.shutdown.icon_background": "#ff5c54",
   "theme.bar.menus.menu.power.buttons.shutdown.background": "#ff5c54",
-  "theme.bar.menus.menu.power.border.color": "#ff5c54"
+  "theme.bar.menus.menu.power.border.color": "#ff5c54",
+  "theme.bar.margin_top": "1.1em",
+  "theme.bar.margin_bottom": "0em",
+  "theme.bar.margin_sides": "1.1em"
 }
