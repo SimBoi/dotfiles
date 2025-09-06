@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=cyber-gtk
+Comment=GTK theme based on Cyberpunk 2077 breach protocol.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=cyber-gtk
+GtkTheme=cyber-gtk
+IconTheme=cyber-gtk
+MetacityTheme=cyber-gtk
