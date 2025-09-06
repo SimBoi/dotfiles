@@ -59,7 +59,7 @@ GUI Apps:
 * [stremio](https://aur.archlinux.org/packages/stremio): media streaming
 * [jellyfin-media-player](https://aur.archlinux.org/packages/jellyfin-media-player): self-hosted media streaming
 * [valent-git](https://aur.archlinux.org/valent-git.git): gtk implementation of kdeconnect without the million kde dependencies
-* [betterbird-bin](https://aur.archlinux.org/packages/betterbird-bin/): mail client
+* [betterbird-bin](https://aur.archlinux.org/packages/betterbird-bin/): email client
 * [transmission-gtk](https://wiki.archlinux.org/title/Transmission): torrent client
 * [selectdefaultapplication-git](https://wiki.archlinux.org/title/XDG_MIME_Applications): configure mimeapps.list to set default apps
 * [cartridges](https://github.com/kra-mo/cartridges): Unified game launcher
@@ -67,7 +67,7 @@ GUI Apps:
 DE (Hyprland):
 
 * [xdg-desktop-portal-gtk](https://wiki.hypr.land/Hypr-Ecosystem/xdg-desktop-portal-hyprland/): fallback for xdg-desktop-portal-hyprland
-* [hyprpolkitagent](https://wiki.hypr.land/0.47.0/Hypr-Ecosystem/hyprpolkitagent/): gui authentication handler
+* [polkit-gnome](https://wiki.archlinux.org/title/Polkit): gui authentication handler
 * [hyprlock](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/): lock screen
 * [hypridle](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/): lock/suspend on idle
 * [ags-hyprpanel-git](https://hyprpanel.com/getting_started/hyprpanel.html): top bar, notifications, osd, and more
@@ -106,7 +106,7 @@ stow -t ~ */
 ### Packages
 
 ```shell
-yay -Sy ghostty rofi visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk hyprpolkitagent hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk selectdefaultapplication-git cartridges
+yay -Sy ghostty rofi visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk selectdefaultapplication-git cartridges
 yay -Sy --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 

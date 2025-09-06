@@ -1,0 +1,9 @@
+[opener]
+open = [
+  { run = 'fish -c "open \$argv" -- "$@"', desc = "Open", orphan = true },
+  { run = 'fish -c "open-with \$argv" -- "$@"', desc = "Open With", orphan = true },
+  { run = 'fish -c "open-with-once \$argv" -- "$@"', desc = "Open With Once", orphan = true },
+]
+play = [
+	{ run = 'fish -c "open \$argv" -- "$@"', desc = "Play Media", orphan = true },
+]
