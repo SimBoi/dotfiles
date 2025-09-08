@@ -138,3 +138,9 @@ sudo ufw allow ssh
 * betterbird
 * sddm
 * [vs code](https://github.com/SimBoi/dotfiles/tree/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol)
+
+### Related
+
+* rofi theme is a modified version of [joepigott's](https://github.com/joepigott/dots)
+* spicetify theme is a modified version of [text theme](https://github.com/spicetify/spicetify-themes/blob/master/text/README.md)
+* discord theme is a modified version of [system24](https://refact0r.github.io/system24/)
