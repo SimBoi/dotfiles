@@ -1,4 +1,4 @@
-![screenshots](https://github.com/SimBoi/dotfiles/blob/main/screenshots/snapshot_2025-09-05_22-10-25.png)
+![screenshots](https://github.com/SimBoi/dotfiles/blob/main/screenshots/preview.png)
 
 # ✨ My .dotfiles
 
