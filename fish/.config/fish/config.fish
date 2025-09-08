@@ -20,30 +20,20 @@ alias cd=z
 alias ssh-server='ssh debian@simboi.com -p 16922'
 
 # -------------------------------------------------------------------
-# open-with-once: pick an app with rofi/dmenu and open file(s)
-# does NOT register as default
-# -------------------------------------------------------------------
-function open-with-once
-    for file in $argv
-        set chosen (bash ~/.config/rofi/choose-desktop.sh)
-        if test -n "$chosen"
-            gtk-launch $chosen $file &
-        else
-            echo "No app selected for $file"
-        end
-    end
-end
-
-# -------------------------------------------------------------------
-# open-with: pick an app with rofi/dmenu, set it as default, open file(s)
+# open-with: pick an app with rofi/dmenu and optionally set as default
 # -------------------------------------------------------------------
 function open-with
     for file in $argv
         set mime (file --mime-type -b $file)
-        set chosen (bash ~/.config/rofi/choose-desktop.sh)
+        set chosen (bash ~/.config/rofi/choose-desktop.sh "$mime")
+
         if test -n "$chosen"
-            # register as default for this MIME type
-            xdg-mime default "$chosen.desktop" "$mime"
+            # ask user if they want to set as default
+            set answer (printf "Yes\nNo" | rofi -dmenu -p "Set $chosen as default for $mime?")
+            if test "$answer" = "Yes"
+                xdg-mime default "$chosen.desktop" "$mime"
+            end
+
             gtk-launch $chosen $file &
         else
             echo "No app selected for $file"

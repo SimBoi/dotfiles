@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+mime="$1"
 
 apps_dir=(
   /usr/share/applications
@@ -17,7 +18,7 @@ selected=$(
             [ -n "$name" ] || continue
             echo -e "$name [$desktop_id]\0icon\x1f$icon"
         done < <(find "$dir" -type f -name "*.desktop")
-    done | rofi -dmenu -i -p "Choose app ~ " -show-icons
+    done | rofi -dmenu -i -p "Open $mime with ~ " -show-icons
 )
 
 desktop_id=$(echo "$selected" | sed 's/.*\[\(.*\)\]/\1/')

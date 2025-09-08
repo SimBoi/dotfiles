@@ -38,6 +38,7 @@ TUI Apps:
 
 GUI Apps:
 
+* [nautilus](https://apps.gnome.org/Nautilus/): file manager
 * [ghostty](https://ghostty.org/docs/install/binary#linux-(official)): terminal emulator
 * [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin): code editor
 * [gnome-text-editor](https://archlinux.org/packages/extra/x86_64/gnome-text-editor/): basic text editor
@@ -53,7 +54,7 @@ GUI Apps:
 * [loupe](https://apps.gnome.org/Loupe/): image viewer
 * [nwg-look](https://github.com/nwg-piotr/nwg-look): gtk ricing
 * qt5ct + qt6ct + kvantum: qt ricing
-* [wvkbd](https://github.com/jjsullivan5196/wvkbd): on-screen keyboard
+* [wvkbd](https://github.com/jjsullivan5196/wvkbd): on-screen keyboard (bad - should find a replacemend in the future)
 * [gnome-disk-utility](https://apps.gnome.org/DiskUtility/): disk and partition management
 * [clapper](https://github.com/Rafostar/clapper?tab=readme-ov-file): video player
 * [stremio](https://aur.archlinux.org/packages/stremio): media streaming
@@ -61,7 +62,6 @@ GUI Apps:
 * [valent-git](https://aur.archlinux.org/valent-git.git): gtk implementation of kdeconnect without the million kde dependencies
 * [betterbird-bin](https://aur.archlinux.org/packages/betterbird-bin/): email client
 * [transmission-gtk](https://wiki.archlinux.org/title/Transmission): torrent client
-* [selectdefaultapplication-git](https://wiki.archlinux.org/title/XDG_MIME_Applications): configure mimeapps.list to set default apps
 * [cartridges](https://github.com/kra-mo/cartridges): Unified game launcher
 
 DE (Hyprland):
@@ -106,7 +106,7 @@ stow -t ~ */
 ### Packages
 
 ```shell
-yay -Sy ghostty rofi visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk selectdefaultapplication-git cartridges
+yay -Sy nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges
 yay -Sy --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 
@@ -134,3 +134,4 @@ sudo ufw allow ssh
 * vesktop
 * betterbird
 * sddm
+* vs code
