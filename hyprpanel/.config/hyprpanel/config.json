@@ -68,7 +68,7 @@
   "bar.autoHide": "fullscreen",
   "theme.bar.border.location": "full",
   "theme.bar.enableShadow": false,
-  "theme.bar.layer": "top",
+  "theme.bar.layer": "bottom",
   "bar.launcher.autoDetectIcon": false,
   "theme.bar.buttons.dashboard.enableBorder": true,
   "theme.bar.buttons.workspaces.enableBorder": true,
