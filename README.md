@@ -63,6 +63,7 @@ GUI Apps:
 * [betterbird-bin](https://aur.archlinux.org/packages/betterbird-bin/): email client
 * [transmission-gtk](https://wiki.archlinux.org/title/Transmission): torrent client
 * [cartridges](https://github.com/kra-mo/cartridges): Unified game launcher
+* [prismlauncher](https://prismlauncher.org/download/?from=button): minecraft launcher
 
 DE (Hyprland):
 
@@ -131,7 +132,7 @@ sudo ufw allow ssh
 ### Manual Configuration
 
 * zen
-* vesktop
+* [vesktop](https://github.com/SimBoi/dotfiles/tree/main/manual-installation/vesktop)
 * betterbird
 * sddm
-* vs code
+* [vs code](https://github.com/SimBoi/dotfiles/tree/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol)
