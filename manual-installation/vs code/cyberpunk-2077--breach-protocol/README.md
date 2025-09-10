@@ -20,13 +20,13 @@ ext install simboi.cyberpunk-2077--breach-protocol
 Linux
 
 ```shell
-curl -L -o /tmp/cyberpunk.vsix https://github.com/SimBoi/dotfiles/raw/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol/cyberpunk-2077--breach-protocol-0.1.0.vsix && code --install-extension /tmp/cyberpunk.vsix
+curl -L -o /tmp/cyberpunk.vsix https://github.com/SimBoi/dotfiles/raw/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol/cyberpunk-2077--breach-protocol-0.3.0.vsix && code --install-extension /tmp/cyberpunk.vsix
 ```
 
 Windows
 
 ```shell
-curl -L "https://github.com/SimBoi/dotfiles/raw/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol/cyberpunk-2077--breach-protocol-0.1.0.vsix" -o "%TEMP%\cyberpunk.vsix" && code --install-extension "%TEMP%\cyberpunk.vsix"
+curl -L "https://github.com/SimBoi/dotfiles/raw/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol/cyberpunk-2077--breach-protocol-0.3.0.vsix" -o "%TEMP%\cyberpunk.vsix" && code --install-extension "%TEMP%\cyberpunk.vsix"
 ```
 
 ## For more information
