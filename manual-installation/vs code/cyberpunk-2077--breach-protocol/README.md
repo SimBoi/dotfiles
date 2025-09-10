@@ -6,6 +6,16 @@ VS Code theme inspired by the Cyberpunk 2077 hacking mini-game breach protocol. 
 
 ## Installation
 
+# Marketplace
+
+Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.
+
+```
+ext install simboi.cyberpunk-2077--breach-protocol
+```
+
+# Manual
+
 Linux
 
 ```shell
