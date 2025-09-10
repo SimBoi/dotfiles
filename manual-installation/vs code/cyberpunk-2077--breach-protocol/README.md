@@ -1,4 +1,5 @@
-![image](https://github.com/SimBoi/dotfiles/blob/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol/snapshot_2025-09-02_20-05-49.png)
+![preview](https://github.com/SimBoi/dotfiles/blob/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol/snapshot_2025-09-02_20-05-49.png)
+![](./manual-installation/vs%20code/cyberpunk-2077--breach-protocol/snapshot_2025-09-02_20-05-49.png)
 
 # Cyberpunk 2077: Breach Protocol
 
