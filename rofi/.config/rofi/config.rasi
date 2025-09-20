@@ -5,6 +5,9 @@ configuration {
   modi: "window,run,drun";
   font: "RajdhaniNerdFont Bold 16";
   show-icons: true;
+  matching: "fuzzy";
+  sort: true;
+  sorting-method: "fzf";
 }
 
 @theme "/dev/null"
@@ -187,4 +190,3 @@ element-text {
 element-text.selected {
     text-color: @cyan;
 }
- 

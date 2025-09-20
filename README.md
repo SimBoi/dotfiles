@@ -32,6 +32,7 @@ CLI Tools:
 * [wl-clip-persist](https://wiki.hypr.land/Useful-Utilities/Clipboard-Managers/): persist clipboard after app exits
 * [cliphist](https://wiki.hypr.land/Useful-Utilities/Clipboard-Managers/): clipboard history
 * [thefuck](https://github.com/nvbn/thefuck): semi-auto command typo correcting
+* [udiskie](https://wiki.hypr.land/0.41.0/Useful-Utilities/Other/#automatically-mounting-using-udiskie): automatic usb device mounting
 
 TUI Apps:
 
@@ -55,6 +56,7 @@ GUI Apps:
 * [gimp](https://wiki.archlinux.org/title/GIMP): advanced paint
 * [loupe](https://apps.gnome.org/Loupe/): image viewer
 * [nwg-look](https://github.com/nwg-piotr/nwg-look): gtk ricing
+* [nwg-displays](https://github.com/nwg-piotr/nwg-displays): gui display settings
 * qt5ct + qt6ct + kvantum: qt ricing
 * [wvkbd](https://github.com/jjsullivan5196/wvkbd): on-screen keyboard (bad - should find a replacemend in the future)
 * [gnome-disk-utility](https://apps.gnome.org/DiskUtility/): disk and partition management
@@ -87,12 +89,7 @@ rustup default stable
 
 ```shell
 # yay for installing AUR packages
-sudo pacman -Sy --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -r yay
+sudo pacman -Sy yay
 ```
 
 ### .dotfiles
@@ -109,7 +106,7 @@ stow -t ~ */
 ### Packages
 
 ```shell
-yay -Sy nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges
+yay -Sy nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look nwg-displays qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility udiskie clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges
 yay -Sy --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 
