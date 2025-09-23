@@ -3,7 +3,7 @@ clipboard-write = allow
 
 font-family = DMMonoNerdFont
 background-opacity = 0.8
-theme = niji
+theme = Niji
 background = #110e16
 foreground = #d1ee59
 
