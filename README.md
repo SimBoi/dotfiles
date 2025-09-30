@@ -46,6 +46,7 @@ GUI Apps:
 * [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin): code editor
 * [gnome-text-editor](https://archlinux.org/packages/extra/x86_64/gnome-text-editor/): basic text editor
 * [unityhub](https://aur.archlinux.org/packages/unityhub): game engine
+* [godot-mono](https://wiki.archlinux.org/title/Godot_Engine): game engine
 * [bitwarden](https://archlinux.org/packages/extra/x86_64/bitwarden/): password manager
 * [vesktop](https://vesktop.vencord.dev/install/linux/): modded discord
 * [zen-browser-bin](https://aur.archlinux.org/packages/zen-browser-bin): browser
@@ -82,14 +83,14 @@ DE (Hyprland):
 ## 🚀 Installation
 
 ```shell
-# rustup for compiling rust applications
-sudo pacman -Sy rustup
-rustup default stable
+# yay for installing AUR packages
+sudo pacman -Sy yay
 ```
 
 ```shell
-# yay for installing AUR packages
-sudo pacman -Sy yay
+# rustup for compiling rust applications
+yay -Sy --answerclean n --answerdiff n --noconfirm rustup
+rustup default stable
 ```
 
 ### .dotfiles
@@ -97,7 +98,7 @@ sudo pacman -Sy yay
 create symlinks for the dotfiles using stow
 
 ```shell
-yay -Sy stow
+yay -Sy --answerclean n --answerdiff n --noconfirm stow
 git clone https://github.com/SimBoi/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 stow -t ~ */
@@ -106,8 +107,8 @@ stow -t ~ */
 ### Packages
 
 ```shell
-yay -Sy nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look nwg-displays qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility udiskie clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges
-yay -Sy --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
+yay -Sy --answerclean n --answerdiff n --noconfirm nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub godot-mono bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look nwg-displays qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility udiskie clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges
+yay -Sy --answerclean n --answerdiff n --noconfirm --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 
 ```shell
@@ -117,7 +118,7 @@ spotify-launcher
 
 ```shell
 # spotify modding using spicetify
-yay -Sy spicetify-cli
+yay -Sy --answerclean n --answerdiff n --noconfirm spicetify-cli
 spicetify backup apply
 ```
 
