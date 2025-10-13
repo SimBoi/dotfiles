@@ -63,3 +63,6 @@ function open
         end
     end
 end
+
+fish_add_path --path /home/sim/android-studio/bin
+fish_add_path --path /home/sim/flutter/bin
