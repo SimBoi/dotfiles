@@ -33,11 +33,14 @@ CLI Tools:
 * [cliphist](https://wiki.hypr.land/Useful-Utilities/Clipboard-Managers/): clipboard history
 * [thefuck](https://github.com/nvbn/thefuck): semi-auto command typo correcting
 * [udiskie](https://wiki.hypr.land/0.41.0/Useful-Utilities/Other/#automatically-mounting-using-udiskie): automatic usb device mounting
+* [gvfs-mtp](https://wiki.archlinux.org/title/Media_Transfer_Protocol): automatic android device mounting
 
 TUI Apps:
 
 * [yazi](https://yazi-rs.github.io/docs/installation): tui file manager
 * [lazygit](https://github.com/jesseduffield/lazygit): git tui
+* [lazyssh](https://github.com/Adembc/lazyssh): tui ssh manager
+* [termscp](https://github.com/veeso/termscp): file transfer tui
 
 GUI Apps:
 
@@ -107,7 +110,7 @@ stow -t ~ */
 ### Packages
 
 ```shell
-yay -Sy --answerclean n --answerdiff n --noconfirm nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub godot-mono bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look nwg-displays qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility udiskie clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges
+yay -Sy --answerclean n --answerdiff n --noconfirm nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub godot-mono bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit termscp lazyssh zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look nwg-displays qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility udiskie clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges gvfs-mtp
 yay -Sy --answerclean n --answerdiff n --noconfirm --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 
