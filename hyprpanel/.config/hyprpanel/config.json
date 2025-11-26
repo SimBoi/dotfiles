@@ -522,5 +522,6 @@
   "theme.bar.menus.menu.power.border.color": "#ff5c54",
   "theme.bar.margin_top": "1.1em",
   "theme.bar.margin_bottom": "0em",
-  "theme.bar.margin_sides": "1.1em"
+  "theme.bar.margin_sides": "1.1em",
+  "bar.workspaces.workspaces": 6
 }
