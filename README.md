@@ -72,6 +72,7 @@ GUI Apps:
 * [transmission-gtk](https://wiki.archlinux.org/title/Transmission): torrent client
 * [cartridges](https://github.com/kra-mo/cartridges): Unified game launcher
 * [prismlauncher](https://prismlauncher.org/download/?from=button): minecraft launcher
+* [kdenlive](https://kdenlive.org/)
 
 DE (Hyprland):
 
@@ -110,7 +111,7 @@ stow -t ~ */
 ### Packages
 
 ```shell
-yay -Sy --answerclean n --answerdiff n --noconfirm nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub godot-mono bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit termscp lazyssh zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look nwg-displays qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility udiskie clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges gvfs-mtp
+yay -Sy --answerclean n --answerdiff n --noconfirm nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub godot-mono bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit termscp lazyssh zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look nwg-displays qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility udiskie clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges gvfs-mtp kdenlive
 yay -Sy --answerclean n --answerdiff n --noconfirm --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
 ```
 
