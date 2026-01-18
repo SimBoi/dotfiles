@@ -1,0 +1,49 @@
+pkgname=meta-simboi-de
+pkgver=1.0
+pkgrel=1
+pkgdesc="Simboi desktop environment meta package"
+arch=(any)
+license=(custom)
+depends=(
+  # Core desktop
+  nautilus
+  ghostty
+  gnome-text-editor
+  zen-browser-bin
+  bitwarden
+  betterbird-bin
+  rofi
+
+  # System integration
+  polkit-gnome
+  xdg-desktop-portal-gtk
+  gnome-disk-utility
+  valent-git
+
+  # Clipboard & audio
+  wl-clip-persist
+  cliphist
+  helvum
+
+  # Devices
+  udiskie
+  gvfs-mtp
+
+  # Media & graphics
+  loupe
+  clapper
+  kolourpaint
+  gimp
+  transmission-gtk
+
+  # Ricing & display
+  nwg-look
+  nwg-displays
+  qt5ct
+  qt6ct
+  kvantum
+)
+
+package() {
+  :
+}

@@ -1,4 +1,4 @@
-![screenshots](https://github.com/SimBoi/dotfiles/blob/main/screenshots/preview.png)
+![screenshots](https://github.com/SimBoi/dotfiles/blob/caelestia/screenshots/preview.png)
 
 # ✨ My .dotfiles
 
@@ -20,108 +20,43 @@ This assumes a working installation of CachyOS with all the default packages + f
 * xorg-xwayland
 * wl-clipboard
 
-CLI Tools:
-
-* [yay](https://github.com/Jguer/yay): AUR helper
-* [ripgrep](https://github.com/BurntSushi/ripgrep): better grep
-* [bat](https://github.com/sharkdp/bat?tab=readme-ov-file): better cat
-* [fd](https://github.com/sharkdp/fd): better find
-* [fzf](https://github.com/junegunn/fzf): fuzzy finder
-* [zoxide](https://github.com/ajeetdsouza/zoxide): better cd
-* [playerctl](https://github.com/altdesktop/playerctl): control media players
-* [wl-clip-persist](https://wiki.hypr.land/Useful-Utilities/Clipboard-Managers/): persist clipboard after app exits
-* [cliphist](https://wiki.hypr.land/Useful-Utilities/Clipboard-Managers/): clipboard history
-* [thefuck](https://github.com/nvbn/thefuck): semi-auto command typo correcting
-* [udiskie](https://wiki.hypr.land/0.41.0/Useful-Utilities/Other/#automatically-mounting-using-udiskie): automatic usb device mounting
-* [gvfs-mtp](https://wiki.archlinux.org/title/Media_Transfer_Protocol): automatic android device mounting
-
-TUI Apps:
-
-* [yazi](https://yazi-rs.github.io/docs/installation): tui file manager
-* [lazygit](https://github.com/jesseduffield/lazygit): git tui
-* [lazyssh](https://github.com/Adembc/lazyssh): tui ssh manager
-* [termscp](https://github.com/veeso/termscp): file transfer tui
-
-GUI Apps:
-
-* [nautilus](https://apps.gnome.org/Nautilus/): file manager
-* [ghostty](https://ghostty.org/docs/install/binary#linux-(official)): terminal emulator
-* [visual-studio-code-bin](https://aur.archlinux.org/packages/visual-studio-code-bin): code editor
-* [gnome-text-editor](https://archlinux.org/packages/extra/x86_64/gnome-text-editor/): basic text editor
-* [unityhub](https://aur.archlinux.org/packages/unityhub): game engine
-* [godot-mono](https://wiki.archlinux.org/title/Godot_Engine): game engine
-* [bitwarden](https://archlinux.org/packages/extra/x86_64/bitwarden/): password manager
-* [vesktop](https://vesktop.vencord.dev/install/linux/): modded discord
-* [zen-browser-bin](https://aur.archlinux.org/packages/zen-browser-bin): browser
-* [spotify-launcher](https://wiki.archlinux.org/title/Spotify): music
-* [spicetify](https://spicetify.app/docs/advanced-usage/installation): spotify modding
-* [helvum](https://github.com/relulz/helvum): patchbay for pipewire
-* [kolourpaint](https://apps.kde.org/kolourpaint/): basic paint
-* [gimp](https://wiki.archlinux.org/title/GIMP): advanced paint
-* [loupe](https://apps.gnome.org/Loupe/): image viewer
-* [nwg-look](https://github.com/nwg-piotr/nwg-look): gtk ricing
-* [nwg-displays](https://github.com/nwg-piotr/nwg-displays): gui display settings
-* qt5ct + qt6ct + kvantum: qt ricing
-* [wvkbd](https://github.com/jjsullivan5196/wvkbd): on-screen keyboard (bad - should find a replacemend in the future)
-* [gnome-disk-utility](https://apps.gnome.org/DiskUtility/): disk and partition management
-* [clapper](https://github.com/Rafostar/clapper?tab=readme-ov-file): video player
-* [stremio](https://aur.archlinux.org/packages/stremio): media streaming
-* [jellyfin-media-player](https://aur.archlinux.org/packages/jellyfin-media-player): self-hosted media streaming
-* [valent-git](https://aur.archlinux.org/valent-git.git): gtk implementation of kdeconnect without the million kde dependencies
-* [betterbird-bin](https://aur.archlinux.org/packages/betterbird-bin/): email client
-* [transmission-gtk](https://wiki.archlinux.org/title/Transmission): torrent client
-* [cartridges](https://github.com/kra-mo/cartridges): Unified game launcher
-* [prismlauncher](https://prismlauncher.org/download/?from=button): minecraft launcher
-* [kdenlive](https://kdenlive.org/)
-
-DE (Hyprland):
-
-* [xdg-desktop-portal-gtk](https://wiki.hypr.land/Hypr-Ecosystem/xdg-desktop-portal-hyprland/): fallback for xdg-desktop-portal-hyprland
-* [polkit-gnome](https://wiki.archlinux.org/title/Polkit): gui authentication handler
-* [hyprlock](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/): lock screen
-* [hypridle](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/): lock/suspend on idle
-* [ags-hyprpanel-git](https://hyprpanel.com/getting_started/hyprpanel.html): top bar, notifications, osd, and more
-* hyprpanel optional: python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
-* [rofi](https://github.com/davatorium/rofi): app launcher and dmenu
-
 ## 🚀 Installation
 
-```shell
-# yay for installing AUR packages
-sudo pacman -Sy yay
-```
+clone the repo
 
 ```shell
-# rustup for compiling rust applications
-yay -Sy --answerclean n --answerdiff n --noconfirm rustup
-rustup default stable
+git clone https://github.com/SimBoi/dotfiles ~/.dotfiles
 ```
 
-### .dotfiles
+install packages
+
+```shell
+yay --answerclean n --answerdiff n --noconfirm
+cd ~/.dotfiles/pkgbuilds/meta-simboi-de
+makepkg -si
+cd ~/.dotfiles/pkgbuilds/meta-simboi-dev
+makepkg -si
+cd ~/.dotfiles/pkgbuilds/meta-simboi-entertainment
+makepkg -si
+```
 
 create symlinks for the dotfiles using stow
 
 ```shell
-yay -Sy --answerclean n --answerdiff n --noconfirm stow
-git clone https://github.com/SimBoi/dotfiles ~/.dotfiles
-cd ~/.dotfiles
+yay -S --answerclean n --answerdiff n --noconfirm stow
+cd ~/.dotfiles/stow
 stow -t ~ */
 ```
 
-### Packages
+run spotify-launcher atleast once to install the current spotify version
 
 ```shell
-yay -Sy --answerclean n --answerdiff n --noconfirm nautilus ghostty rofi visual-studio-code-bin gnome-text-editor unityhub godot-mono bitwarden yazi fd ripgrep fzf zoxide bat thefuck wl-clip-persist cliphist lazygit termscp lazyssh zen-browser-bin vesktop spotify-launcher helvum playerctl kolourpaint gimp loupe nwg-look nwg-displays qt5ct qt5-wayland qt6ct qt6-wayland kvantum wvkbd xdg-desktop-portal-gtk polkit-gnome hyprlock hypridle ags-hyprpanel-git gnome-disk-utility udiskie clapper stremio jellyfin-media-player valent-git betterbird-bin transmission-gtk cartridges gvfs-mtp kdenlive
-yay -Sy --answerclean n --answerdiff n --noconfirm --needed ffmpeg 7zip jq poppler resvg imagemagick python-gpustat pywal pacman-contrib grimblast wf-recorder hyprsunset btop matugen swww
-```
-
-```shell
-# run spotify-launcher atleast once to install the current spotify version
 spotify-launcher
 ```
 
+spotify modding using spicetify
+
 ```shell
-# spotify modding using spicetify
 yay -Sy --answerclean n --answerdiff n --noconfirm spicetify-cli
 spicetify backup apply
 ```
@@ -136,13 +71,4 @@ sudo ufw allow ssh
 ### Manual Configuration
 
 * zen
-* [vesktop](https://github.com/SimBoi/dotfiles/tree/main/manual-installation/vesktop)
 * betterbird
-* sddm
-* [vs code](https://github.com/SimBoi/dotfiles/tree/main/manual-installation/vs%20code/cyberpunk-2077--breach-protocol)
-
-### Related
-
-* rofi theme is a modified version of [joepigott's](https://github.com/joepigott/dots)
-* spicetify theme is a modified version of [text theme](https://github.com/spicetify/spicetify-themes/blob/master/text/README.md)
-* discord theme is a modified version of [system24](https://refact0r.github.io/system24/)

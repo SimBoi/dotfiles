@@ -1,0 +1,8 @@
+clipboard-read = allow
+clipboard-write = allow
+shell-integration-features = ssh-terminfo
+shell-integration-features = ssh-env
+shell-integration-features = sudo
+
+font-family = DMMonoNerdFont
+background-opacity = 0.8

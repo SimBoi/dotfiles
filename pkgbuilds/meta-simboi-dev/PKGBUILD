@@ -1,0 +1,28 @@
+pkgname=meta-simboi-dev
+pkgver=1.0
+pkgrel=1
+pkgdesc="Simboi development tools meta package"
+arch=(any)
+license=(custom)
+depends=(
+  # CLI / TUI productivity
+  ripgrep
+  bat
+  fd
+  fzf
+  zoxide
+  thefuck
+  yazi
+  lazygit
+  lazyssh
+  termscp
+
+  # Engines / IDEs
+  unityhub
+  godot-mono
+  zed
+)
+
+package() {
+  :
+}

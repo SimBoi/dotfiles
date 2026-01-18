@@ -1,0 +1,20 @@
+pkgname=meta-simboi-entertainment
+pkgver=1.0
+pkgrel=1
+pkgdesc="Simboi gaming and entertainment meta package"
+arch=(any)
+license=(custom)
+depends=(
+  vesktop
+  spotify-launcher
+  spicetify
+  stremio
+  jellyfin-media-player
+  cartridges
+  prismlauncher
+  kdenlive
+)
+
+package() {
+  :
+}
