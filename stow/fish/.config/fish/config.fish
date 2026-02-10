@@ -1,7 +1,7 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 # default apps
-export EDITOR=vim
+export EDITOR=nvim
 
 fzf --fish | source
 zoxide init fish | source
@@ -14,10 +14,6 @@ function y
     rm -f -- "$tmp"
 end
 thefuck --alias | source
-
-alias cat=bat
-alias cd=z
-alias ssh-server='ssh debian@simboi.com -p 16922'
 
 # -------------------------------------------------------------------
 # open-with: pick an app with rofi/dmenu and optionally set as default
@@ -64,5 +60,17 @@ function open
     end
 end
 
+# flutter
 fish_add_path --path /home/sim/android-studio/bin
 fish_add_path --path /home/sim/flutter/bin
+
+if status is-interactive
+    starship init fish | source
+
+    # Custom colours
+    cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
+
+    alias cat=bat
+    alias cd=z
+    alias ssh-server='ssh debian@simboi.com -p 16922'
+end

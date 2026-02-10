@@ -1,5 +1,3 @@
-![screenshots](https://github.com/SimBoi/dotfiles/blob/caelestia/screenshots/preview.png)
-
 # ✨ My .dotfiles
 
 What | I use
@@ -8,8 +6,9 @@ System | CachyOS
 Window Manager | Hyprland
 Shell | fish
 Terminal | Ghostty
-File Manager | Yazi
+File Manager | Yazi/Nautilus
 Browser | Zen
+Editor | Zed
 
 ### Packages
 
@@ -33,11 +32,13 @@ install packages
 ```shell
 yay --answerclean n --answerdiff n --noconfirm
 cd ~/.dotfiles/pkgbuilds/meta-simboi-de
-makepkg -si
+makepkg
 cd ~/.dotfiles/pkgbuilds/meta-simboi-dev
-makepkg -si
+makepkg
 cd ~/.dotfiles/pkgbuilds/meta-simboi-entertainment
-makepkg -si
+makepkg
+cd ~/.dotfiles/pkgbuilds
+yay -U meta-simboi-*.pkg.tar.zst
 ```
 
 create symlinks for the dotfiles using stow
@@ -68,7 +69,22 @@ sudo systemctl enable sshd
 sudo ufw allow ssh
 ```
 
+open the kdeconnect port
+
+```shell
+sudo ufw allow 1714:1764/tcp
+sudo ufw allow 1714:1764/udp
+```
+
 ### Manual Configuration
 
 * zen
 * betterbird
+
+
+
+
+TODO
+# Location provider and night light
+exec-once = /usr/lib/geoclue-2.0/demos/agent
+exec-once = sleep 1 && gammastep

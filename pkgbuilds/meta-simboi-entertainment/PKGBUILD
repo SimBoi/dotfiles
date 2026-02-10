@@ -10,9 +10,7 @@ depends=(
   spicetify
   stremio
   jellyfin-media-player
-  cartridges
   prismlauncher
-  kdenlive
 )
 
 package() {

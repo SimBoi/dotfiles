@@ -9,25 +9,18 @@ depends=(
   nautilus
   ghostty
   gnome-text-editor
-  zen-browser-bin
-  bitwarden
-  betterbird-bin
-  rofi
-
-  # System integration
   polkit-gnome
   xdg-desktop-portal-gtk
-  gnome-disk-utility
-  valent-git
-
-  # Clipboard & audio
   wl-clip-persist
   cliphist
-  helvum
+  zen-browser-bin
+  caelestia-shell
+  rofi
 
-  # Devices
+  # Disk management
   udiskie
   gvfs-mtp
+  gnome-disk-utility
 
   # Media & graphics
   loupe
@@ -35,6 +28,7 @@ depends=(
   kolourpaint
   gimp
   transmission-gtk
+  kdenlive
 
   # Ricing & display
   nwg-look
@@ -42,6 +36,12 @@ depends=(
   qt5ct
   qt6ct
   kvantum
+
+  # Utilities
+  betterbird-bin
+  kdeconnect
+  bitwarden
+  helvum
 )
 
 package() {

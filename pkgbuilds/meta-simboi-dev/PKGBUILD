@@ -5,7 +5,7 @@ pkgdesc="Simboi development tools meta package"
 arch=(any)
 license=(custom)
 depends=(
-  # CLI / TUI productivity
+  # CLI / TUI
   ripgrep
   bat
   fd
@@ -21,6 +21,7 @@ depends=(
   unityhub
   godot-mono
   zed
+  neovim
 )
 
 package() {
