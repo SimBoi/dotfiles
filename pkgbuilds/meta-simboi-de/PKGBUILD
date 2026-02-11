@@ -23,6 +23,7 @@ depends=(
   gnome-disk-utility
 
   # Media & graphics
+  mpv
   loupe
   clapper
   kolourpaint
@@ -42,6 +43,7 @@ depends=(
   kdeconnect
   bitwarden
   helvum
+  pavucontrol
 )
 
 package() {
