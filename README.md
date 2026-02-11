@@ -32,13 +32,14 @@ install packages
 ```shell
 yay --answerclean n --answerdiff n --noconfirm
 cd ~/.dotfiles/pkgbuilds/meta-simboi-de
-makepkg
+yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
+makepkg -si
 cd ~/.dotfiles/pkgbuilds/meta-simboi-dev
-makepkg
+yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
+makepkg -si
 cd ~/.dotfiles/pkgbuilds/meta-simboi-entertainment
-makepkg
-cd ~/.dotfiles/pkgbuilds
-yay -U meta-simboi-*.pkg.tar.zst
+yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
+makepkg -si
 ```
 
 create symlinks for the dotfiles using stow
@@ -58,7 +59,6 @@ spotify-launcher
 spotify modding using spicetify
 
 ```shell
-yay -Sy --answerclean n --answerdiff n --noconfirm spicetify-cli
 spicetify backup apply
 ```
 

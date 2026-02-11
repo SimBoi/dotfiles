@@ -3,7 +3,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc="Simboi development tools meta package"
 arch=(any)
-license=(custom)
+license=(unlicense)
 depends=(
   # CLI / TUI
   ripgrep

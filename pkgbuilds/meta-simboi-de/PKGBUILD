@@ -3,7 +3,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc="Simboi desktop environment meta package"
 arch=(any)
-license=(custom)
+license=(unlicense)
 depends=(
   # Core desktop
   nautilus

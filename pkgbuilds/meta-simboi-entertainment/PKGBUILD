@@ -3,11 +3,11 @@ pkgver=1.0
 pkgrel=1
 pkgdesc="Simboi gaming and entertainment meta package"
 arch=(any)
-license=(custom)
+license=(unlicense)
 depends=(
   vesktop
   spotify-launcher
-  spicetify
+  spicetify-cli
   stremio
   jellyfin-media-player
   prismlauncher
