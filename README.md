@@ -30,7 +30,7 @@ git clone https://github.com/SimBoi/dotfiles ~/.dotfiles
 install packages
 
 ```shell
-yay --answerclean n --answerdiff n --noconfirm
+yay --answerclean n --answerdiff n --noconfirm --sudoloop
 cd ~/.dotfiles/pkgbuilds/meta-simboi-de
 yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
 makepkg -si
@@ -45,7 +45,7 @@ makepkg -si
 create symlinks for the dotfiles using stow
 
 ```shell
-yay -S --answerclean n --answerdiff n --noconfirm stow
+yay -S --answerclean n --answerdiff n --noconfirm --sudoloop stow
 cd ~/.dotfiles/stow
 stow -t ~ */
 ```
