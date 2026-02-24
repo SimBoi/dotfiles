@@ -16,6 +16,7 @@ depends=(
   zen-browser-bin
   caelestia-shell
   rofi
+  gnome-keyring
 
   # Disk management
   udiskie
