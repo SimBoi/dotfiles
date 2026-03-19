@@ -3,6 +3,7 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 # default apps
 export EDITOR=nvim
 
+# cli tools init
 fzf --fish | source
 zoxide init fish | source
 function y
@@ -64,13 +65,15 @@ end
 fish_add_path --path /home/sim/android-studio/bin
 fish_add_path --path /home/sim/flutter/bin
 
+# caelestia
 if status is-interactive
     starship init fish | source
 
     # Custom colours
     cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
 
-    alias cat=bat
-    alias cd=z
-    alias ssh-server='ssh debian@simboi.com -p 16922'
 end
+
+# custom aliases
+alias ssh-server='ssh debian@simboi.com -p 16922'
+alias autoyay='yay --answerclean n --answerdiff n --noconfirm --sudoloop'

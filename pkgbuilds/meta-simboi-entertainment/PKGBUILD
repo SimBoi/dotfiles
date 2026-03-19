@@ -9,7 +9,7 @@ depends=(
   spotify-launcher
   spicetify-cli
   stremio
-  jellyfin-media-player
+  jellyfin-desktop
   prismlauncher
 )
 
