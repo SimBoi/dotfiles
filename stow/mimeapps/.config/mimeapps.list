@@ -107,3 +107,6 @@ audio/x-matroska=com.github.rafostar.Clapper.desktop
 audio/x-ms-asx=com.github.rafostar.Clapper.desktop
 audio/x-speex=com.github.rafostar.Clapper.desktop
 inode/directory=org.gnome.Nautilus.desktop
+x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
+x-scheme-handler/discord-742222376518811669=discord-742222376518811669.desktop
+x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
