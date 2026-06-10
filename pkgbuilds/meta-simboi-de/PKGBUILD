@@ -17,6 +17,7 @@ depends=(
   caelestia-shell
   rofi
   gnome-keyring
+  luarocks
 
   # Disk management
   udiskie

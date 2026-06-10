@@ -1,3 +1,19 @@
+read -P 'Use Nvidia mode? (Y/n) ' nvidiamode
+read -P 'Auto start apps? (Y/n) ' autostartmode
+read -P 'Apply oh31 keybinds? (Y/n) ' oh31mode
+touch ~/.dotfiles/MODE
+echo '{' > ~/.dotfiles/MODE
+if test $nvidiamode = 'n'; echo '	"nvidia": false,' > ~/.dotfiles/MODE;
+else echo '	"nvidia": true,' >> ~/.dotfiles/MODE;
+end
+if test $autostartmode = 'n'; echo '	"autoStart": false,' > ~/.dotfiles/MODE;
+else echo '	"autoStart": true,' >> ~/.dotfiles/MODE;
+end
+if test $oh31mode = 'n'; echo '	"oh31": false' > ~/.dotfiles/MODE;
+else echo '	"oh31": true' >> ~/.dotfiles/MODE;
+end
+echo '}' >> ~/.dotfiles/MODE
+
 # prepare the system
 sudo pacman -Syu
 
@@ -23,6 +39,9 @@ makepkg -si --noconfirm
 cd ~/.dotfiles/pkgbuilds/meta-simboi-entertainment
 yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
 makepkg -si --noconfirm
+
+# install lua json package for hyprland config
+sudo luarocks install dkjson
 
 # install themes
 wget -qO- https://raw.githubusercontent.com/Bonandry/adwaita-plus/master/install.sh | sh

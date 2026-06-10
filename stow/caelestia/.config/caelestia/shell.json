@@ -1,85 +1,105 @@
 {
-    "general": {
-        "logo": "caelestia",
-        "apps": {
-            "terminal": ["ghostty"],
-            "audio": ["pavucontrol"],
-            "playback": ["mpv"],
-            "explorer": ["nautilus"]
-        },
-        "idle": {
-            "lockBeforeSleep": true,
-            "inhibitWhenAudio": true,
-            "timeouts": [
-                {
-                    "timeout": 1800,
-                    "idleAction": "lock"
-                }
-            ]
-        }
-    },
     "background": {
-        "enabled": true,
         "desktopClock": {
-            "enabled": true,
             "background": {
+                "blur": true,
                 "enabled": true,
-                "opacity": 0.7,
-                "blur": true
+                "opacity": 0.7
             },
+            "enabled": true,
             "shadow": {
+                "blur": 0.4,
                 "enabled": true,
-                "opacity": 0.7,
-                "blur": 0.4
+                "opacity": 0.7
             }
         },
+        "enabled": true,
         "visualiser": {
-            "enabled": true,
-            "autoHide": true
+            "autoHide": true,
+            "enabled": true
         }
     },
     "bar": {
-        "workspaces": {
-            "shown": 6,
-            "activeIndicator": true,
-            "occupiedBg": false,
-            "showWindows": false,
-            "showWindowsOnSpecialWorkspaces": true,
-            "activeTrail": true,
-            "perMonitorWorkspaces": true
+        "status": {
+            "showAudio": true,
+            "showBattery": true,
+            "showBluetooth": true,
+            "showKbLayout": true,
+            "showLockStatus": true,
+            "showMicrophone": true,
+            "showNetwork": true,
+            "showWifi": true
         },
         "tray": {
             "background": true,
-            "recolour": true,
-            "compact": false
+            "compact": false,
+            "recolour": true
         },
-        "status": {
-            "showAudio": true,
-            "showMicrophone": true,
-            "showKbLayout": true,
-            "showNetwork": true,
-            "showWifi": true,
-            "showBluetooth": true,
-            "showBattery": true,
-            "showLockStatus": true
+        "workspaces": {
+            "activeIndicator": true,
+            "activeTrail": true,
+            "occupiedBg": false,
+            "perMonitorWorkspaces": true,
+            "showWindows": false,
+            "showWindowsOnSpecialWorkspaces": true,
+            "shown": 6
         }
+    },
+    "general": {
+        "apps": {
+            "audio": [
+                "pavucontrol"
+            ],
+            "explorer": [
+                "nautilus"
+            ],
+            "playback": [
+                "mpv"
+            ],
+            "terminal": [
+                "ghostty"
+            ]
+        },
+        "idle": {
+            "inhibitWhenAudio": true,
+            "lockBeforeSleep": true,
+            "timeouts": [
+                {
+                    "idleAction": "lock",
+                    "timeout": 1800
+                }
+            ]
+        },
+        "logo": "caelestia"
     },
     "launcher": {
         "maxWallpapers": 5,
-        "vimKeybinds": true,
         "useFuzzy": {
-            "apps": true,
             "actions": true,
+            "apps": true,
             "schemes": false,
             "variants": false,
             "wallpapers": false
-        }
+        },
+        "vimKeybinds": true
     },
     "notifs": {
         "openExpanded": true
     },
     "osd": {
         "enableMicrophone": true
+    },
+    "paths": {
+        "mediaGif": "~/.config/caelestia/2b.gif",
+        "sessionGif": "root:/assets/kurukuru.gif",
+        "wallpaperDir": "~/Pictures/Wallpapers"
+    },
+    "services": {
+        "defaultPlayer": "Spotify",
+        "maxVolume": 1.5,
+        "smartScheme": true,
+        "useFahrenheit": false,
+        "useTwelveHourClock": false
     },
     "session": {
         "commands": {
@@ -90,17 +110,5 @@
                 "lock"
             ]
         }
-    },
-    "services": {
-        "useFahrenheit": false,
-        "useTwelveHourClock": false,
-        "maxVolume": 1.5,
-        "smartScheme": true,
-        "defaultPlayer": "Spotify"
-    },
-    "paths": {
-        "wallpaperDir": "~/Pictures/Wallpapers",
-        "sessionGif": "root:/assets/kurukuru.gif",
-        "mediaGif": "~/.config/caelestia/2b.gif"
     }
 }
