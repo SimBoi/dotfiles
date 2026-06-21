@@ -1,0 +1,19 @@
+local open = io.open
+local file = open("~/.dotfiles/MODE", "rb")
+if not file then return nil end
+local jsonString = file:read "*a"
+file:close()
+local json = require("dkjson")
+local mode = json.decode(jsonString, 1, nil)
+
+require("./hyprland/env")
+require("./hyprland/general")
+require("./hyprland/input")
+require("./hyprland/misc")
+require("./hyprland/animations")
+require("./hyprland/decoration")
+require("./hyprland/group")
+require("./hyprland/execs")
+require("./hyprland/rules")
+require("./hyprland/gestures")
+require("./hyprland/keybinds")
