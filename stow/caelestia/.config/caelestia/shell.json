@@ -1,4 +1,9 @@
 {
+    "appearance": {
+        "transparency": {
+            "enabled": true
+        }
+    },
     "background": {
         "desktopClock": {
             "background": {
@@ -17,7 +22,8 @@
         "visualiser": {
             "autoHide": true,
             "enabled": true
-        }
+        },
+        "wallpaperEnabled": true
     },
     "bar": {
         "status": {
@@ -44,6 +50,9 @@
             "showWindowsOnSpecialWorkspaces": true,
             "shown": 6
         }
+    },
+    "dashboard": {
+        "showDashboard": true
     },
     "general": {
         "apps": {
@@ -73,6 +82,7 @@
         "logo": "caelestia"
     },
     "launcher": {
+        "enableDangerousActions": true,
         "maxWallpapers": 5,
         "useFuzzy": {
             "actions": true,
@@ -81,7 +91,7 @@
             "variants": false,
             "wallpapers": false
         },
-        "vimKeybinds": true
+        "vimKeybinds": false
     },
     "notifs": {
         "openExpanded": true

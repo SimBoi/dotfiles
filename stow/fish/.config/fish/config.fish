@@ -76,4 +76,4 @@ end
 
 # custom aliases
 alias ssh-server='ssh debian@simboi.com -p 16922'
-alias autoyay='yay --answerclean n --answerdiff n --noconfirm --sudoloop'
+alias bitte='yay --answerclean n --answerdiff n --noconfirm --sudoloop'
