@@ -11,9 +11,9 @@ hl.on("hyprland.start", function ()
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
 	-- Cursors
-	hl.exec_cmd("hyprctl setcursor $cursorTheme $cursorSize")
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme '$cursorTheme'")
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size $cursorSize")
+	hl.exec_cmd("hyprctl setcursor sweet-cursors 24")
+	hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'sweet-cursors'")
+	hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size 24")
 
 	-- Forward bluetooth media commands to MPRIS
 	hl.exec_cmd("mpris-proxy")
