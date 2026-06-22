@@ -53,16 +53,23 @@ hl.define_submap("oh31", function()
 	hl.bind(mainMod .. " + E", hl.dsp.focus({ direction = "u"}))
 	hl.bind(mainMod .. " + T", hl.dsp.focus({ direction = "d"}))
 	-- Workspace management
-	hl.bind(mainMod .. " + J", hl.dsp.focus({ workspace = 1}))
-	hl.bind(mainMod .. " + D", hl.dsp.focus({ workspace = 2}))
-	hl.bind(mainMod .. " + Y", hl.dsp.focus({ workspace = 3}))
-	hl.bind(mainMod .. " + L", hl.dsp.focus({ workspace = 4}))
-	hl.bind(mainMod .. " + B", hl.dsp.focus({ workspace = 5}))
+	hl.bind(mainMod .. " + J", hl.dsp.focus({ workspace = 1}), { release = true })
+	hl.bind(mainMod .. " + D", hl.dsp.focus({ workspace = 2}), { release = true })
+	hl.bind(mainMod .. " + Y", hl.dsp.focus({ workspace = 3}), { release = true })
+	hl.bind(mainMod .. " + L", hl.dsp.focus({ workspace = 4}), { release = true })
+	hl.bind(mainMod .. " + B", hl.dsp.focus({ workspace = 5}), { release = true })
 	hl.bind(mainMod .. " + J", hl.dsp.window.move({ workspace = 1 }), { long_press = true })
 	hl.bind(mainMod .. " + D", hl.dsp.window.move({ workspace = 2 }), { long_press = true })
 	hl.bind(mainMod .. " + Y", hl.dsp.window.move({ workspace = 3 }), { long_press = true })
 	hl.bind(mainMod .. " + L", hl.dsp.window.move({ workspace = 4 }), { long_press = true })
 	hl.bind(mainMod .. " + B", hl.dsp.window.move({ workspace = 5 }), { long_press = true })
+	-- Tabs inside program
+	hl.bind(mainMod .. " + C", hl.dsp.send_shortcut({ mods = "ALT", key = "1" }))
+	hl.bind(mainMod .. " + S", hl.dsp.send_shortcut({ mods = "ALT", key = "2" }))
+	hl.bind(mainMod .. " + I", hl.dsp.send_shortcut({ mods = "ALT", key = "3" }))
+	hl.bind(mainMod .. " + O", hl.dsp.send_shortcut({ mods = "ALT", key = "4" }))
+	hl.bind(mainMod .. " + F", hl.dsp.send_shortcut({ mods = "ALT", key = "5" }))
+	hl.bind(mainMod .. " + Delete", hl.dsp.send_shortcut({ mods = "ALT", key = "6" }))
 	-- TODO switch tabs inside programs
 
 	-- switch submap TODO move to universal bind
@@ -86,11 +93,11 @@ hl.define_submap("GenericKeyboard", function()
 	-- Layout management
 	hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit"))
 	-- Workspace management
-	hl.bind(mainMod .. " + 1", hl.dsp.focus({ workspace = 1}))
-	hl.bind(mainMod .. " + 2", hl.dsp.focus({ workspace = 2}))
-	hl.bind(mainMod .. " + 3", hl.dsp.focus({ workspace = 3}))
-	hl.bind(mainMod .. " + 4", hl.dsp.focus({ workspace = 4}))
-	hl.bind(mainMod .. " + 5", hl.dsp.focus({ workspace = 5}))
+	hl.bind(mainMod .. " + 1", hl.dsp.focus({ workspace = 1}), { release = true })
+	hl.bind(mainMod .. " + 2", hl.dsp.focus({ workspace = 2}), { release = true })
+	hl.bind(mainMod .. " + 3", hl.dsp.focus({ workspace = 3}), { release = true })
+	hl.bind(mainMod .. " + 4", hl.dsp.focus({ workspace = 4}), { release = true })
+	hl.bind(mainMod .. " + 5", hl.dsp.focus({ workspace = 5}), { release = true })
 	hl.bind(mainMod .. " + 1", hl.dsp.window.move({ workspace = 1 }), { long_press = true })
 	hl.bind(mainMod .. " + 2", hl.dsp.window.move({ workspace = 2 }), { long_press = true })
 	hl.bind(mainMod .. " + 3", hl.dsp.window.move({ workspace = 3 }), { long_press = true })
@@ -124,5 +131,7 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_S
 -- TODO Cycle submaps
 hl.bind(mainMod .. " + SHIFT + SHIFT_L", hl.dsp.submap("oh31"), { release = true })
 
--- default submap
-hl.dsp.submap("oh31")
+-- default to oh31 submap
+hl.on("hyprland.start", function () 
+  hl.exec_cmd("hyprctl dispatch 'hl.dsp.submap(\"oh31\")'")
+end)

@@ -1,3 +1,5 @@
+local scheme = require("scheme.current")
+
 hl.config({
     decoration = {
         active_opacity = 1.0,
@@ -20,7 +22,7 @@ hl.config({
             enabled = true,
             range = 20,
             render_power = 3,
-            -- color = rgba($surfaced4), -- TODO load the colors from caelestia
+            color = "rgba(" .. scheme.surface .. "d4)",
         },
     },
     

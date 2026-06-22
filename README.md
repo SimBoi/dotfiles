@@ -8,7 +8,7 @@ Shell | fish
 Terminal | Ghostty
 File Manager | Yazi/Nautilus
 Browser | Zen
-Editor | Zed
+Editor | Neovim
 
 ### Packages
 

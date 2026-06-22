@@ -7,9 +7,8 @@
 -- local mode = json.decode(jsonString, 1, nil)
 
 -- externally managed by other apps
--- require("./monitors")
--- require("./workspaces")
--- require("./scheme/current")
+require("monitors")
+require("workspaces")
 
 -- default monitor conf
 hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })

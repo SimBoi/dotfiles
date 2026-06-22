@@ -1,3 +1,5 @@
+local scheme = require("scheme.current")
+
 hl.config({
     general = {
         layout = "dwindle",
@@ -9,8 +11,10 @@ hl.config({
         gaps_out = 20,
         border_size = 3,
 
-        -- col.active_border = rgba($primarye6),  -- TODO load the colors from caelestia
-        -- col.inctive_border = rgba($onSurfaceVariant11),  -- TODO load the colors from caelestia
+        col = {
+		active_border = "rgba(" .. scheme.primary .. "e6)",
+        	inactive_border = "rgba(" .. scheme.onSurfaceVariant .. "11)",
+	},
     },
 
     dwindle = {
@@ -37,6 +41,6 @@ hl.config({
         mouse_move_enables_dpms = false,
         key_press_enables_dpms = true,
 
-        -- background_color = rgb($surfaceContainer),  -- TODO support colors
+        background_color = "rgb(" .. scheme.surfaceContainer .. ")",
     },
 })
