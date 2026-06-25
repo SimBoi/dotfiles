@@ -1,16 +1,12 @@
-read -P 'Use Nvidia mode? (Y/n) ' nvidiamode
+read -P 'Run in Nvidia mode? (Y/n) ' nvidiamode
 read -P 'Auto start apps? (Y/n) ' autostartmode
-read -P 'Apply oh31 keybinds? (Y/n) ' oh31mode
 touch ~/.dotfiles/MODE
 echo '{' > ~/.dotfiles/MODE
 if test $nvidiamode = 'n'; echo '	"nvidia": false,' > ~/.dotfiles/MODE;
 else echo '	"nvidia": true,' >> ~/.dotfiles/MODE;
 end
 if test $autostartmode = 'n'; echo '	"autoStart": false,' > ~/.dotfiles/MODE;
-else echo '	"autoStart": true,' >> ~/.dotfiles/MODE;
-end
-if test $oh31mode = 'n'; echo '	"oh31": false' > ~/.dotfiles/MODE;
-else echo '	"oh31": true' >> ~/.dotfiles/MODE;
+else echo '	"autoStart": true' >> ~/.dotfiles/MODE;
 end
 echo '}' >> ~/.dotfiles/MODE
 

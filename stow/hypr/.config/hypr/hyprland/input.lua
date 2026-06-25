@@ -31,6 +31,13 @@ hl.gesture({
 mainMod = "SUPER"
 secondaryMod = "ALT"
 
+function dsp_submap(submap)
+	return function()
+		hl.dispatch(hl.dsp.submap(submap))
+		hl.exec_cmd('notify-send "' .. submap .. ' submap activated"')
+	end
+end
+
 hl.define_submap("oh31", function()
 	-- Clipboard
 	hl.bind(mainMod .. " + CTRL + R", hl.dsp.exec_cmd("pkill fuzzel || caelestia clipboard"))
@@ -72,8 +79,7 @@ hl.define_submap("oh31", function()
 	hl.bind(mainMod .. " + Delete", hl.dsp.send_shortcut({ mods = "ALT", key = "6" }))
 	-- TODO switch tabs inside programs
 
-	-- switch submap TODO move to universal bind
-	hl.bind(mainMod .. " + SHIFT + SHIFT_L", hl.dsp.submap("GenericKeyboard"), { release = true })
+	hl.bind(mainMod .. " + SHIFT + SHIFT_L", dsp_submap("GenericKeyboard"), { release = true })
 end)
 
 hl.define_submap("GenericKeyboard", function()
@@ -105,8 +111,7 @@ hl.define_submap("GenericKeyboard", function()
 	hl.bind(mainMod .. " + 5", hl.dsp.window.move({ workspace = 5 }), { long_press = true })
 	-- TODO switch tabs inside programs
 
-	-- switch submap TODO move to universal bind
-	hl.bind(mainMod .. " + SHIFT + SHIFT_L", hl.dsp.submap("oh31"), { release = true })
+	hl.bind(mainMod .. " + SHIFT + SHIFT_L", dsp_submap("oh31"), { release = true })
 end)
 
 -- G502 binds
@@ -129,9 +134,8 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ to
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 10%+"), { submap_universal = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-"), { submap_universal = true })
 -- TODO Cycle submaps
-hl.bind(mainMod .. " + SHIFT + SHIFT_L", hl.dsp.submap("oh31"), { release = true })
 
 -- default to oh31 submap
 hl.on("hyprland.start", function () 
-  hl.exec_cmd("hyprctl dispatch 'hl.dsp.submap(\"oh31\")'")
+	hl.dispatch(hl.dsp.submap("oh31"))
 end)

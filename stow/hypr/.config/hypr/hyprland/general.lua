@@ -1,5 +1,3 @@
-local scheme = require("scheme.current")
-
 hl.config({
     general = {
         layout = "dwindle",

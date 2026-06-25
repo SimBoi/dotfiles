@@ -1,5 +1,3 @@
-local scheme = require("scheme.current")
-
 hl.config({
     decoration = {
         active_opacity = 1.0,
