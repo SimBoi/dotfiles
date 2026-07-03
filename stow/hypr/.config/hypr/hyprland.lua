@@ -5,7 +5,7 @@ package.path = package.path
     .. ";/usr/share/lua/" .. ver .. "/?/init.lua"
 
 local modeFile = io.open("/home/sim/.dotfiles/MODE", "rb")
-local modeJson = modeFile:read "*a"
+local modeJson = modeFile:read("*a")
 modeFile:close()
 local json = __require("dkjson")
 mode = json.decode(modeJson, 1, nil)

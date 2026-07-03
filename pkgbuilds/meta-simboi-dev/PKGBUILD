@@ -18,9 +18,8 @@ depends=(
   termscp
 
   # Engines / IDEs
+  tree-sitter-cli
   unityhub
-  godot-mono
-  zed
   neovim
 )
 
