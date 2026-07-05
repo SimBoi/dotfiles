@@ -1,2 +1,7 @@
 MODE
+stow/fonts/.fonts/.uuid
 stow/nvim/.config/nvim/nvim-pack-lock.json
+stow/hypr/.config/hypr/monitors.lua
+stow/hypr/.config/hypr/monitors.conf
+stow/hypr/.config/hypr/workspaces.lua
+stow/hypr/.config/hypr/workspaces.conf
