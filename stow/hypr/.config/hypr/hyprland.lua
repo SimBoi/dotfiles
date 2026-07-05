@@ -11,8 +11,8 @@ local json = __require("dkjson")
 mode = json.decode(modeJson, 1, nil)
 
 -- externally managed by other apps
-require("monitors")
-require("workspaces")
+pcall(require, "monitors")
+pcall(require, "workspaces")
 scheme = require("scheme.current")
 
 -- default monitor conf
