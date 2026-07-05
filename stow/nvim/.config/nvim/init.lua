@@ -3,7 +3,7 @@ vim.pack.add({
 	-- libraries
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	-- color schemes
-	{ src = "https://github.com/eldritch-theme/eldritch.nvim" },
+	{ src = "https://github.com/miikanissi/modus-themes.nvim" },
 	-- git
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	-- navigation
@@ -21,8 +21,8 @@ vim.pack.add({
 vim.cmd("packadd nvim.undotree")
 
 -- enable plugins
-require("eldritch").setup({
-	transparent = true,
+require("modus-themes").setup({
+    transparent = true,
 })
 require("gitsigns").setup()
 require("mini.pick").setup()
@@ -33,7 +33,7 @@ require('neoscroll').setup({
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("tree-sitter-manager").setup({ auto_install = true })
-vim.cmd.colorscheme("eldritch")
+vim.cmd.colorscheme("modus")
 
 -- lsp
 vim.o.autocomplete = true
