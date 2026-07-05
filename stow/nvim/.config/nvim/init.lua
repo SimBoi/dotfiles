@@ -3,7 +3,7 @@ vim.pack.add({
 	-- libraries
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	-- color schemes
-	{ src = "https://github.com/folke/tokyonight.nvim" },
+	{ src = "https://github.com/eldritch-theme/eldritch.nvim" },
 	-- git
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	-- navigation
@@ -14,14 +14,14 @@ vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+    { src = "https://github.com/seblyng/roslyn.nvim" },
 	-- treesitter
 	{ src = "https://github.com/romus204/tree-sitter-manager.nvim" },
 })
 vim.cmd("packadd nvim.undotree")
 
 -- enable plugins
-require("tokyonight").setup({
-	style = "night",
+require("eldritch").setup({
 	transparent = true,
 })
 require("gitsigns").setup()
@@ -33,12 +33,13 @@ require('neoscroll').setup({
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("tree-sitter-manager").setup({ auto_install = true })
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("eldritch")
 
 -- lsp
 vim.o.autocomplete = true
 vim.o.complete = ".,w,b,o"
 vim.o.completeopt = "menuone,noselect,fuzzy,popup"
+vim.o.pumheight = 10
 
 -- tree-sitter
 vim.api.nvim_create_autocmd("FileType", {
