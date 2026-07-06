@@ -8,7 +8,6 @@ depends=(
   # Core desktop
   nautilus
   ghostty
-  gnome-text-editor
   polkit-gnome
   xdg-desktop-portal-gtk
   wl-clip-persist

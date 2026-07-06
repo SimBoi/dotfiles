@@ -65,15 +65,19 @@ end
 fish_add_path --path /home/sim/android-studio/bin
 fish_add_path --path /home/sim/flutter/bin
 
-# caelestia
 if status is-interactive
-    starship init fish | source
-
     # Custom colours
     cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
 
+    # cli tools init
+    starship init fish | source
+
+    # cli tools drop-in replacements
+    alias cat='bat -pp'
+    alias cd='z'
+    alias ls='eza'
+
+    # custom aliases
+    alias bitte='yay --answerclean n --answerdiff n --noconfirm --sudoloop'
 end
 
-# custom aliases
-alias ssh-server='ssh debian@simboi.com -p 16922'
-alias bitte='yay --answerclean n --answerdiff n --noconfirm --sudoloop'
