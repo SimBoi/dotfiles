@@ -1,40 +1,42 @@
+#!/usr/bin/fish
+
 read -P 'Run in Nvidia mode? (Y/n) ' nvidiamode
 read -P 'Auto start apps? (Y/n) ' autostartmode
 touch ~/.dotfiles/MODE
 echo '{' > ~/.dotfiles/MODE
-if test $nvidiamode = 'n'; echo '	"nvidia": false,' > ~/.dotfiles/MODE;
+if test $nvidiamode = 'n'; echo '	"nvidia": false,' >> ~/.dotfiles/MODE;
 else echo '	"nvidia": true,' >> ~/.dotfiles/MODE;
 end
-if test $autostartmode = 'n'; echo '	"autoStart": false,' > ~/.dotfiles/MODE;
+if test $autostartmode = 'n'; echo '	"autoStart": false,' >> ~/.dotfiles/MODE;
 else echo '	"autoStart": true' >> ~/.dotfiles/MODE;
 end
 echo '}' >> ~/.dotfiles/MODE
 
 # prepare the system
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 
 # install yay
-sudo pacman -S yay
+sudo pacman -S --noconfirm yay
 
 # clone the repo
 git clone https://github.com/SimBoi/dotfiles ~/.dotfiles
 
 # symlink the dotfiles
-yay -S --answerclean n --answerdiff n --noconfirm --sudoloop stow
+alias autoyay='yay --answerclean n --answerdiff n --noconfirm --sudoloop'
+autoyay -S --needed stow
 cd ~/.dotfiles/stow
 stow -t ~ */
 
 # install packages
-yay --answerclean n --answerdiff n --noconfirm --sudoloop
 cd ~/.dotfiles/pkgbuilds/meta-simboi-de
-yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
-makepkg -si --noconfirm
+autoyay -S --needed --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
+makepkg -sifc --noconfirm && rm *.zst
 cd ~/.dotfiles/pkgbuilds/meta-simboi-dev
-yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
-makepkg -si --noconfirm
+autoyay -S --needed --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
+makepkg -sifc --noconfirm && rm *.zst
 cd ~/.dotfiles/pkgbuilds/meta-simboi-entertainment
-yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
-makepkg -si --noconfirm
+autoyay -S --needed --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
+makepkg -sifc --noconfirm && rm *.zst
 
 # install lua json package for hyprland config
 sudo luarocks install dkjson
@@ -53,3 +55,6 @@ sudo ufw allow ssh
 # open the kde connect ports
 sudo ufw allow 1714:1764/tcp
 sudo ufw allow 1714:1764/udp
+
+# cleanup
+autoyay -Rns $(yay -Qdtq)

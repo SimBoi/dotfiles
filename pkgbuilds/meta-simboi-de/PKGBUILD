@@ -42,7 +42,7 @@ depends=(
   ttf-jetbrains-mono-nerd
 
   # Utilities
-  betterbird-bin
+  thunderbird
   kdeconnect
   bitwarden
   helvum
