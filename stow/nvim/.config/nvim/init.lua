@@ -2,6 +2,7 @@
 vim.pack.add({
 	-- libraries
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/nvim-mini/mini.icons" },
 	-- color schemes
 	{ src = "https://github.com/miikanissi/modus-themes.nvim" },
 	-- git
@@ -17,6 +18,8 @@ vim.pack.add({
     { src = "https://github.com/seblyng/roslyn.nvim" },
 	-- treesitter
 	{ src = "https://github.com/romus204/tree-sitter-manager.nvim" },
+    -- others
+    { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 })
 vim.cmd("packadd nvim.undotree")
 
@@ -24,6 +27,7 @@ vim.cmd("packadd nvim.undotree")
 require("modus-themes").setup({
     transparent = true,
 })
+require("mini.icons").setup()
 require("gitsigns").setup()
 require("mini.pick").setup()
 require('neoscroll').setup({
