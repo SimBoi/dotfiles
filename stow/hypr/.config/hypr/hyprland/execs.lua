@@ -1,6 +1,6 @@
 hl.on("hyprland.start", function () 
 	-- Auth
-	hl.exec_cmd("/usr/lib/polkit-gnomme/polkit-gnome/authentication-agent-1")
+	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 
 	-- Auto mount removable media
 	hl.exec_cmd("udiskie")
@@ -10,10 +10,8 @@ hl.on("hyprland.start", function ()
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
-	-- Cursors
-	hl.exec_cmd("hyprctl setcursor sweet-cursors 24")
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'sweet-cursors'")
-	hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size 24")
+	-- Fallback Cursors
+	hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Catppuccin Mocha Dark'")
 
 	-- Forward bluetooth media commands to MPRIS
 	hl.exec_cmd("mpris-proxy")

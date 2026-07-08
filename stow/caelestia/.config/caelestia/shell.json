@@ -26,6 +26,11 @@
         "wallpaperEnabled": true
     },
     "bar": {
+        "persistent": true,
+        "popouts": {
+            "tray": true
+        },
+        "showOnHover": true,
         "status": {
             "showAudio": true,
             "showBattery": true,
@@ -57,16 +62,20 @@
     "general": {
         "apps": {
             "audio": [
-                "pavucontrol"
+                "hyprpwcenter"
             ],
             "explorer": [
-                "nautilus"
+                "nautilus",
+                "--new-window"
             ],
             "playback": [
-                "mpv"
+                "mpv",
+                "--player-operation-mode=pseudo-gui",
+                "--"
             ],
             "terminal": [
-                "ghostty"
+                "/usr/bin/ghostty",
+                "--gtk-single-instance=true"
             ]
         },
         "idle": {
@@ -82,7 +91,10 @@
         "logo": "caelestia"
     },
     "launcher": {
-        "enableDangerousActions": true,
+        "enableDangerousActions": false,
+        "favouriteApps": [
+            "zen"
+        ],
         "maxWallpapers": 5,
         "useFuzzy": {
             "actions": true,
@@ -94,6 +106,7 @@
         "vimKeybinds": false
     },
     "notifs": {
+        "fullscreen": "on",
         "openExpanded": true
     },
     "osd": {
@@ -118,7 +131,27 @@
                 "shell",
                 "lock",
                 "lock"
+            ],
+            "reboot": [
+                "hyprshutdown",
+                "-t",
+                "'Restarting...'",
+                "--post-cmd",
+                "'reboot'"
+            ],
+            "shutdown": [
+                "hyprshutdown",
+                "-t",
+                "'Shutting down...'",
+                "--post-cmd",
+                "'shutdown -P 0'"
             ]
+        },
+        "icons": {
+            "hibernate": "downloading",
+            "logout": "lock",
+            "reboot": "cached",
+            "shutdown": "power_settings_new"
         }
     }
 }

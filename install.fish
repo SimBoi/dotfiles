@@ -51,10 +51,18 @@ gsettings set org.gnome.desktop.interface icon-theme "'Adwaita++-Dark'"
 # enable ssh server
 sudo systemctl enable sshd
 sudo ufw allow ssh
+# require root password for sudo
+if not sudo grep -qx 'Defaults rootpw' /etc/sudoers
+    echo 'Defaults rootpw' | sudo tee -a /etc/sudoers >/dev/null
+end
+sudo visudo -c
+# disable root ssh
+if not sudo grep -qx 'PermitRootLogin no' /etc/ssh/sshd_config
+    echo 'PermitRootLogin no' | sudo tee -a /etc/ssh/sshd_config >/dev/null
+end
+sudo sshd -t
+and sudo systemctl restart sshd
 
 # open the kde connect ports
 sudo ufw allow 1714:1764/tcp
 sudo ufw allow 1714:1764/udp
-
-# cleanup
-autoyay -Rns $(yay -Qdtq)

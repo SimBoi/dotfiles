@@ -8,8 +8,10 @@ depends=(
   # Core desktop
   nautilus
   ghostty
-  polkit-gnome
+  hyprpolkitagent
+  xdg-desktop-portal-hyprland
   xdg-desktop-portal-gtk
+  hyprshutdown
   wl-clip-persist
   cliphist
   zen-browser-bin
@@ -39,14 +41,13 @@ depends=(
   qt6ct-kde
   kvantum
   adw-gtk-theme
+  catppuccin-cursors-mocha
   ttf-jetbrains-mono-nerd
 
   # Utilities
   thunderbird
   kdeconnect
-  bitwarden
-  helvum
-  pavucontrol
+  hyprpwcenter
 )
 
 package() {
