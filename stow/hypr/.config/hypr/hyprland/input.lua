@@ -40,7 +40,7 @@ end
 
 hl.define_submap("oh31", function()
 	-- Clipboard
-	hl.bind(mainMod .. " + CTRL + R", hl.dsp.exec_cmd("pkill fuzzel || caelestia clipboard"))
+	hl.bind(mainMod .. " + CTRL + R", hl.dsp.exec_cmd("cursor-clip"))
 	-- Screenshot
 	hl.bind("Print", hl.dsp.global("caelestia:screenshotFreezeClip"))
 	hl.bind(secondaryMod .. " + Print", hl.dsp.global("caelestia:screenshotFreeze"))
@@ -84,7 +84,7 @@ end)
 
 hl.define_submap("GenericKeyboard", function()
 	-- Clipboard
-	hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("pkill fuzzel || caelestia clipboard"))
+	hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cursor-clip"))
 	-- Screenshot
 	hl.bind("Print", hl.dsp.global("caelestia:screenshotFreezeClip"))
 	hl.bind(secondaryMod .. " + Print", hl.dsp.global("caelestia:screenshotFreeze"))
@@ -115,7 +115,7 @@ hl.define_submap("GenericKeyboard", function()
 end)
 
 -- G502 binds
-hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("pkill fuzzel || caelestia clipboard"), { submap_universal = true })
+hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("cursor-clip"), { submap_universal = true })
 hl.bind(mainMod .. " + X", hl.dsp.window.close(), { submap_universal = true })
 hl.bind(mainMod .. " + M", hl.dsp.window.drag(), { mouse = true, submap_universal = true })
 hl.bind(mainMod .. " + G", hl.dsp.window.resize(), { mouse = true, submap_universal = true })

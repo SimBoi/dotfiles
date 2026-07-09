@@ -13,12 +13,14 @@ depends=(
   xdg-desktop-portal-gtk
   hyprshutdown
   wl-clip-persist
-  cliphist
+  cursor-clip
   zen-browser-bin
   caelestia-shell
   rofi
   gnome-keyring
   luarocks
+  qt5-wayland
+  qt6-wayland
 
   # Disk management
   udiskie

@@ -75,7 +75,8 @@
             ],
             "terminal": [
                 "/usr/bin/ghostty",
-                "--gtk-single-instance=true"
+                "--gtk-single-instance=true",
+                "-e"
             ]
         },
         "idle": {
@@ -135,16 +136,16 @@
             "reboot": [
                 "hyprshutdown",
                 "-t",
-                "'Restarting...'",
+                "Restarting...",
                 "--post-cmd",
-                "'reboot'"
+                "reboot"
             ],
             "shutdown": [
                 "hyprshutdown",
                 "-t",
-                "'Shutting down...'",
+                "Shutting down...",
                 "--post-cmd",
-                "'shutdown -P 0'"
+                "shutdown -P 0"
             ]
         },
         "icons": {

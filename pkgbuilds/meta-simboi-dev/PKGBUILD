@@ -17,6 +17,7 @@ depends=(
   lazygit
   lazyssh
   termscp
+  android-tools
 
   # Engines / IDEs
   tree-sitter-cli

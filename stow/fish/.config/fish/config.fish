@@ -75,7 +75,7 @@ if status is-interactive
     # cli tools drop-in replacements
     alias cat='bat -pp'
     alias cd='z'
-    alias ls='eza'
+    alias ls='eza -l'
 
     # custom aliases
     alias bitte='yay --answerclean n --answerdiff n --noconfirm --sudoloop'
