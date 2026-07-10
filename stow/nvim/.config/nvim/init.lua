@@ -18,6 +18,8 @@ vim.pack.add({
     { src = "https://github.com/seblyng/roslyn.nvim" },
 	-- treesitter
 	{ src = "https://github.com/romus204/tree-sitter-manager.nvim" },
+    -- editing
+	{ src = "https://github.com/nvim-mini/mini.pairs" },
     -- others
     { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 })
@@ -37,6 +39,7 @@ require('neoscroll').setup({
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("tree-sitter-manager").setup({ auto_install = true })
+require('mini.pairs').setup()
 vim.cmd.colorscheme("modus")
 
 -- lsp

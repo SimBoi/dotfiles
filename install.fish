@@ -41,6 +41,12 @@ makepkg -sifc --noconfirm && rm *.zst
 # install lua json package for hyprland config
 sudo luarocks install dkjson
 
+# install hyprland plugins
+hyprpm update
+hyprpm add https://github.com/savonovv/hypr-kinetic-scroll
+hyprpm update
+hyprpm enable hypr-kinetic-scroll
+
 # install themes
 wget -qO- https://raw.githubusercontent.com/Bonandry/adwaita-plus/master/install.sh | sh
 gsettings set org.gnome.desktop.interface gtk-theme "'adw-gtk3-dark'"
@@ -56,6 +62,17 @@ if not sudo grep -qx 'Defaults rootpw' /etc/sudoers
     echo 'Defaults rootpw' | sudo tee -a /etc/sudoers >/dev/null
 end
 sudo visudo -c
+# require root password for polkit
+if not sudo test -f /etc/polkit-1/rules.d/49-rootpw_global.rules
+    printf '%s\n' \
+'/* Always authenticate Admins by prompting for the root' \
+' * password, similar to the rootpw option in sudo' \
+' */' \
+'polkit.addAdminRule(function(action, subject) {' \
+'    return ["unix-user:root"];' \
+'});' |
+    sudo tee /etc/polkit-1/rules.d/49-rootpw_global.rules >/dev/null
+end
 # disable root ssh
 if not sudo grep -qx 'PermitRootLogin no' /etc/ssh/sshd_config
     echo 'PermitRootLogin no' | sudo tee -a /etc/ssh/sshd_config >/dev/null
