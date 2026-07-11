@@ -1,5 +1,6 @@
 {
     "appearance": {
+        "deformScale": 0,
         "transparency": {
             "enabled": true
         }
