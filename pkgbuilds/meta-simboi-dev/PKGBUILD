@@ -21,6 +21,7 @@ depends=(
 
   # Engines / IDEs
   tree-sitter-cli
+  python-pylatexenc
   unityhub
   neovim
 )

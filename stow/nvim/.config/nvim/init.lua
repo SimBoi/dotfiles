@@ -44,7 +44,12 @@ require("tree-sitter-manager").setup({ auto_install = true })
 -- require("blink.pairs").download():pwait(60000)
 require("blink.pairs").setup()
 require("blink.indent").setup({
+    static = {
+        char = "│",
+        highlights = { "BlinkIndent" },
+    },
     scope = {
+        char = "│",
         highlights = { "BlinkIndentScope" },
     },
 })
