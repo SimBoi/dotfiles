@@ -13,7 +13,7 @@ depends=(
   xdg-desktop-portal-gtk
   hyprshutdown
   wl-clip-persist
-  cursor-clip
+  cursor-clip-bin
   zen-browser-bin
   caelestia-shell
   rofi
