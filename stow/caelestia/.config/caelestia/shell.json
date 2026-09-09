@@ -27,21 +27,52 @@
         "wallpaperEnabled": true
     },
     "bar": {
+        "activeWindow": {
+            "compact": false,
+            "inverted": false,
+            "showOnHover": false
+        },
+        "clock": {
+            "background": false,
+            "showDate": true,
+            "showIcon": true
+        },
         "persistent": true,
         "popouts": {
+            "activeWindow": true,
+            "statusIcons": true,
             "tray": true
         },
-        "showOnHover": true,
-        "status": {
-            "showAudio": true,
-            "showBattery": true,
-            "showBluetooth": true,
-            "showKbLayout": true,
-            "showLockStatus": true,
-            "showMicrophone": true,
-            "showNetwork": true,
-            "showWifi": true
+        "scrollActions": {
+            "brightness": true
         },
+        "showOnHover": true,
+        "statusIcons": [
+            {
+                "enabled": true,
+                "id": "lockStatus"
+            },
+            {
+                "enabled": true,
+                "id": "audio"
+            },
+            {
+                "enabled": true,
+                "id": "kbLayout"
+            },
+            {
+                "enabled": true,
+                "id": "network"
+            },
+            {
+                "enabled": true,
+                "id": "bluetooth"
+            },
+            {
+                "enabled": true,
+                "id": "battery"
+            }
+        ],
         "tray": {
             "background": true,
             "compact": false,
@@ -53,7 +84,7 @@
             "occupiedBg": false,
             "perMonitorWorkspaces": true,
             "showWindows": false,
-            "showWindowsOnSpecialWorkspaces": true,
+            "showWindowsOnSpecialWorkspaces": false,
             "shown": 6
         }
     },
@@ -75,9 +106,7 @@
                 "--"
             ],
             "terminal": [
-                "/usr/bin/ghostty",
-                "--gtk-single-instance=true",
-                "-e"
+                "kitty"
             ]
         },
         "idle": {
@@ -108,7 +137,7 @@
         "vimKeybinds": false
     },
     "notifs": {
-        "fullscreen": "on",
+        "fullscreen": "On",
         "openExpanded": true
     },
     "osd": {
@@ -155,5 +184,44 @@
             "reboot": "cached",
             "shutdown": "power_settings_new"
         }
+    },
+    "sidebar": {
+        "dragThreshold": 80
+    },
+    "utilities": {
+        "cards": {
+            "quickToggles": true
+        },
+        "enabled": true,
+        "quickToggles": [
+            {
+                "enabled": true,
+                "id": "wifi"
+            },
+            {
+                "enabled": true,
+                "id": "bluetooth"
+            },
+            {
+                "enabled": true,
+                "id": "mic"
+            },
+            {
+                "enabled": true,
+                "id": "settings"
+            },
+            {
+                "enabled": true,
+                "id": "gameMode"
+            },
+            {
+                "enabled": true,
+                "id": "dnd"
+            },
+            {
+                "enabled": true,
+                "id": "vpn"
+            }
+        ]
     }
 }

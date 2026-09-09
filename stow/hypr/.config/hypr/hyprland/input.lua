@@ -47,7 +47,7 @@ hl.define_submap("oh31", function()
 	-- Launcher
 	hl.bind(mainMod .. " + N", hl.dsp.global("caelestia:launcher"))
 	-- Window management
-	hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("ghostty"))
+	hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("kitty"))
 	hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 	hl.bind(mainMod .. " + " .. secondaryMod .. " + Q", hl.dsp.window.kill())
 	hl.bind(mainMod .. " + comma", hl.dsp.window.float({ action = "toggle" }))
@@ -91,7 +91,7 @@ hl.define_submap("GenericKeyboard", function()
 	-- Launcher
 	hl.bind(mainMod .. " + R", hl.dsp.global("caelestia:launcher"))
 	-- Window management
-	hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("ghostty"))
+	hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("kitty"))
 	hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 	hl.bind(mainMod .. " + " .. secondaryMod .. " + Q", hl.dsp.window.kill())
 	hl.bind(mainMod .. " + " .. secondaryMod .. " + F", hl.dsp.window.float({ action = "toggle" }))

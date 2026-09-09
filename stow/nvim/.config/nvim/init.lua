@@ -41,7 +41,8 @@ require("neoscroll").setup({
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("tree-sitter-manager").setup({ auto_install = true })
--- require("blink.pairs").download():pwait(60000)
+require("vim._core.ui2").enable({})
+require("blink.pairs").download():pwait(60000)
 require("blink.pairs").setup()
 require("blink.indent").setup({
     static = {

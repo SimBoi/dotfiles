@@ -7,7 +7,7 @@ license=(unlicense)
 depends=(
   # Core desktop
   nautilus
-  ghostty
+  kitty
   hyprpolkitagent
   xdg-desktop-portal-hyprland
   xdg-desktop-portal-gtk
@@ -30,7 +30,6 @@ depends=(
   # Media & graphics
   mpv
   loupe
-  clapper
   kolourpaint
   gimp
   transmission-gtk
