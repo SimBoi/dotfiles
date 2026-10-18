@@ -19,7 +19,7 @@ This assumes a working installation of CachyOS with all the default packages + f
 * xorg-xwayland
 * wl-clipboard
 
-## 🚀 Installation
+## Installation
 
 ```shell
 git clone https://github.com/SimBoi/dotfiles ~/.dotfiles
