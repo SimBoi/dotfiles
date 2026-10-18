@@ -40,6 +40,7 @@ hl.window_rule({
 
 -- Workspace assignment rules
 hl.window_rule({ match = { class = "^(vesktop)$" }, workspace = "5" })
+hl.window_rule({ match = { class = "^(stoat-desktop)$" }, workspace = "5" })
 hl.window_rule({ match = { class = "^(Spotify)$" }, workspace = "5" })
 hl.window_rule({ match = { class = "^(org\\.mozilla\\.Thunderbird)$" }, workspace = "6" })
 

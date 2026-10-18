@@ -35,7 +35,8 @@
         "clock": {
             "background": false,
             "showDate": true,
-            "showIcon": true
+            "showIcon": true,
+            "showSeconds": false
         },
         "persistent": true,
         "popouts": {
@@ -89,6 +90,7 @@
         }
     },
     "dashboard": {
+        "showClockSeconds": false,
         "showDashboard": true
     },
     "general": {
@@ -114,7 +116,11 @@
             "lockBeforeSleep": true,
             "timeouts": [
                 {
+                    "enabled": true,
                     "idleAction": "lock",
+                    "inhibitWhenAudio": false,
+                    "inhibitWhenCharging": false,
+                    "respectInhibitors": true,
                     "timeout": 1800
                 }
             ]
@@ -149,8 +155,10 @@
         "wallpaperDir": "~/Pictures/Wallpapers"
     },
     "services": {
+        "clockFormat": "TwentyFourHour",
         "defaultPlayer": "Spotify",
         "maxVolume": 1.5,
+        "sensorUnits": "Celsius",
         "smartScheme": true,
         "useFahrenheit": false,
         "useTwelveHourClock": false

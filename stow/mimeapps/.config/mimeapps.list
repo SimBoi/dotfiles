@@ -110,6 +110,7 @@ x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
 x-scheme-handler/discord-742222376518811669=discord-742222376518811669.desktop
 x-scheme-handler/discord-1216669957799018608=discord-1216669957799018608.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+application/lrf=calibre-lrfviewer.desktop
 
 [Added Associations]
 text/plain=nvim.desktop;micro.desktop;

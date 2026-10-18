@@ -44,6 +44,7 @@ depends=(
   adw-gtk-theme
   catppuccin-cursors-mocha
   ttf-jetbrains-mono-nerd
+  fetch-git
 
   # Utilities
   thunderbird

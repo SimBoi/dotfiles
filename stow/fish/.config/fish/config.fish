@@ -2,6 +2,7 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 # default apps
 export EDITOR=nvim
+alias vim=nvim
 
 # cli tools init
 fzf --fish | source
@@ -79,5 +80,6 @@ if status is-interactive
 
     # custom aliases
     alias bitte='yay --answerclean n --answerdiff n --noconfirm --sudoloop'
+    alias fastfetch=fetch
 end
 
