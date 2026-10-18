@@ -1,0 +1,57 @@
+pkgname=meta-simboi-de
+pkgver=1.0
+pkgrel=1
+pkgdesc="Simboi desktop environment meta package"
+arch=(any)
+license=(unlicense)
+depends=(
+  # Core desktop
+  nautilus
+  kitty
+  hyprpolkitagent
+  xdg-desktop-portal-hyprland
+  xdg-desktop-portal-gtk
+  hyprshutdown
+  wl-clip-persist
+  cursor-clip-bin
+  zen-browser-bin
+  caelestia-shell
+  rofi
+  gnome-keyring
+  luarocks
+  qt5-wayland
+  qt6-wayland
+
+  # Disk management
+  udiskie
+  gvfs-mtp
+  gnome-disk-utility
+
+  # Media & graphics
+  mpv
+  loupe
+  kolourpaint
+  gimp
+  transmission-gtk
+  kdenlive
+
+  # Ricing & display
+  nwg-look
+  nwg-displays
+  qt5ct-kde
+  qt6ct-kde
+  kvantum
+  adw-gtk-theme
+  catppuccin-cursors-mocha
+  ttf-jetbrains-mono-nerd
+  fetch-git
+
+  # Utilities
+  thunderbird
+  kdeconnect
+  hyprpwcenter
+)
+
+package() {
+  :
+}
