@@ -4,8 +4,8 @@ What | I use
 -----|-----
 System | CachyOS
 Window Manager | Hyprland
-Shell | fish
-Terminal | Ghostty
+Shell | Fish
+Terminal | Kitty
 File Manager | Yazi/Nautilus
 Browser | Zen
 Editor | Neovim
