@@ -21,59 +21,11 @@ This assumes a working installation of CachyOS with all the default packages + f
 
 ## 🚀 Installation
 
-clone the repo
-
 ```shell
 git clone https://github.com/SimBoi/dotfiles ~/.dotfiles
-```
-
-install packages
-
-```shell
-yay --answerclean n --answerdiff n --noconfirm --sudoloop
-cd ~/.dotfiles/pkgbuilds/meta-simboi-de
-yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
-makepkg -si
-cd ~/.dotfiles/pkgbuilds/meta-simboi-dev
-yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
-makepkg -si
-cd ~/.dotfiles/pkgbuilds/meta-simboi-entertainment
-yay -S --answerclean n --answerdiff n --noconfirm --sudoloop --asdeps $(bash -c 'source ./PKGBUILD; printf "%s\n" "${depends[@]}"')
-makepkg -si
-```
-
-create symlinks for the dotfiles using stow
-
-```shell
-yay -S --answerclean n --answerdiff n --noconfirm --sudoloop stow
-cd ~/.dotfiles/stow
-stow -t ~ */
-```
-
-run spotify-launcher atleast once to install the current spotify version
-
-```shell
-spotify-launcher
-```
-
-spotify modding using spicetify
-
-```shell
-spicetify backup apply
-```
-
-enable ssh server on startup for remote access
-
-```shell
-sudo systemctl enable sshd
-sudo ufw allow ssh
-```
-
-open the kdeconnect port
-
-```shell
-sudo ufw allow 1714:1764/tcp
-sudo ufw allow 1714:1764/udp
+cd .dotfiles
+sudo chmod u+x install.fish
+./install.fish
 ```
 
 ### Manual Configuration
@@ -81,10 +33,3 @@ sudo ufw allow 1714:1764/udp
 * zen
 * betterbird
 
-
-
-
-TODO
-# Location provider and night light
-exec-once = /usr/lib/geoclue-2.0/demos/agent
-exec-once = sleep 1 && gammastep
