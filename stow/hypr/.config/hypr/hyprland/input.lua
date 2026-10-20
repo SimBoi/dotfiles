@@ -79,6 +79,12 @@ hl.define_submap("oh31", function()
 	hl.bind(mainMod .. " + Delete", hl.dsp.send_shortcut({ mods = "ALT", key = "6" }))
 	-- TODO switch tabs inside programs
 
+    -- G502 binds
+    hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("cursor-clip"))
+    hl.bind(mainMod .. " + X", hl.dsp.window.close())
+    hl.bind(mainMod .. " + M", hl.dsp.window.drag(), { mouse = true })
+    hl.bind(mainMod .. " + G", hl.dsp.window.resize(), { mouse = true })
+
 	hl.bind(mainMod .. " + SHIFT + SHIFT_L", dsp_submap("GenericKeyboard"), { release = true })
 end)
 
@@ -110,15 +116,16 @@ hl.define_submap("GenericKeyboard", function()
 	hl.bind(mainMod .. " + 4", hl.dsp.window.move({ workspace = 4 }), { long_press = true })
 	hl.bind(mainMod .. " + 5", hl.dsp.window.move({ workspace = 5 }), { long_press = true })
 	-- TODO switch tabs inside programs
+ 
+    -- Mouse binds
+    hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("cursor-clip"))
+    hl.bind(mainMod .. " + mouse:274", hl.dsp.window.close())
+    hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+    hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 	hl.bind(mainMod .. " + SHIFT + SHIFT_L", dsp_submap("oh31"), { release = true })
 end)
 
--- G502 binds
-hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("cursor-clip"), { submap_universal = true })
-hl.bind(mainMod .. " + X", hl.dsp.window.close(), { submap_universal = true })
-hl.bind(mainMod .. " + M", hl.dsp.window.drag(), { mouse = true, submap_universal = true })
-hl.bind(mainMod .. " + G", hl.dsp.window.resize(), { mouse = true, submap_universal = true })
 -- Brightness
 hl.bind("XF86MonBrightnessUp", hl.dsp.global("caelestia:brightnessUp"), { submap_universal = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.global("caelestia:brightnessDown"), { submap_universal = true })

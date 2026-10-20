@@ -25,7 +25,6 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("sleep 2 && kdeconnect-indicator")
 
     if mode.autoStart then
-        -- hl.exec_cmd("sleep 2 && vesktop --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy")
         hl.exec_cmd("sleep 2 && stoat-desktop")
         hl.exec_cmd("sleep 2 && spotify-launcher")
         hl.exec_cmd("sleep 2 && thunderbird")

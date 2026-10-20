@@ -80,6 +80,5 @@ if status is-interactive
 
     # custom aliases
     alias bitte='yay --answerclean n --answerdiff n --noconfirm --sudoloop'
-    alias fastfetch=fetch
 end
 
