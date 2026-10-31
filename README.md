@@ -33,3 +33,6 @@ sudo chmod u+x install.fish
 * zen
 * betterbird
 
+### Thanks
+
+- [end-4](https://github.com/end-4/dots-hyprland): m3 widgets
