@@ -45,7 +45,7 @@ hl.define_submap("oh31", function()
 	hl.bind("Print", hl.dsp.global("caelestia:screenshotFreezeClip"))
 	hl.bind(secondaryMod .. " + Print", hl.dsp.global("caelestia:screenshotFreeze"))
 	-- Launcher
-	hl.bind(mainMod .. " + N", hl.dsp.global("caelestia:launcher"))
+	hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("rofi -show run"))
 	-- Window management
 	hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("kitty"))
 	hl.bind(mainMod .. " + Q", hl.dsp.window.close())

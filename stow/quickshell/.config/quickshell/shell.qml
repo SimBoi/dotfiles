@@ -1,18 +1,11 @@
 import QtQuick
 import Quickshell
 
-PanelWindow {
-    anchors {
-        top: true
-        left: true
-        right: true
-    }
+ShellRoot {
+    id: root
 
-    implicitHeight: 30
-
-    Text {
-        anchors.centerIn: parent
-
-        text: "tt"
+    Column {
+        Bar {}
+        ScreenCorners {}
     }
 }
