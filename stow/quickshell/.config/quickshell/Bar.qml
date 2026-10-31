@@ -1,3 +1,4 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell
 import qs.components.widgets
@@ -29,9 +30,31 @@ Scope {
         color: "transparent"
         implicitHeight: 20
 
-        LinearClockWidget {
+        ClockBarWidget {
             anchors.horizontalCenter: parent.horizontalCenter
-            width: 700
+            anchors.verticalCenter: parent.top
+            width: Screen.width / 3
+            dotSize: 10
+            handHeight: 40
+            handWidth: 10
+        }
+
+        WorkspacesBarWidget {
+            anchors.verticalCenter: parent.top
+            anchors.left: parent.left
+            anchors.leftMargin: Screen.width / 9
+            width: Screen.width / 9
+            height: 10
+            gapSize: 4
+        }
+
+        BatteryBarWidget {
+            anchors.verticalCenter: parent.top
+            anchors.right: parent.right
+            anchors.rightMargin: Screen.width / 9
+            valueBarWidth: Screen.width / 9
+            valueBarHeight: 10
+            showStopPoint: false
         }
     }
 }

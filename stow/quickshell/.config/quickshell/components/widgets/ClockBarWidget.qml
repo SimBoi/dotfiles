@@ -1,15 +1,16 @@
+pragma ComponentBehavior: Bound
 import QtQuick
-import QtQuick.Layouts
 import Quickshell
 
 Item {
     id: root
 
-    width: 1000
     property int dotSize: 10
     property int handHeight: 40
     property int handWidth: 10
     readonly property real gapSize: (width - dotSize * 13) / 12
+    width: 1000
+    height: handHeight
 
     SystemClock {
         id: clock
@@ -91,8 +92,8 @@ Item {
     Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-        anchors.leftMargin: root.width * clock.minutesSinceMidnightOrNoon / 720
+        anchors.leftMargin: (root.width - dotSize) * (clock.minutesSinceMidnightOrNoon / 720)
         radius: 100; width: handWidth; height: handHeight
-        color: clock.isPM ? "orange" : "blue"
+        color: clock.isPM ? "orange" : "purple"
     }
 }
