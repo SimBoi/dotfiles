@@ -6,11 +6,10 @@ Item {
     id: root
 
     property int dotSize: 10
-    property int handHeight: 40
     property int handWidth: 10
     readonly property real gapSize: (width - dotSize * 13) / 12
-    width: 1000
-    height: handHeight
+    implicitWidth: 1000
+    implicitHeight: 40
 
     SystemClock {
         id: clock
@@ -23,77 +22,48 @@ Item {
         anchors.centerIn: parent
         width: parent.width
 
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "white"
+        component HourNotch: Rectangle {
+            radius: 100
+            width: root.dotSize
+            implicitHeight: root.dotSize
         }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "gray"
+        component Gap: Item {
+            width: root.gapSize
+            implicitHeight: 1 
         }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "gray"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "white"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "gray"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "gray"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "white"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "gray"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "gray"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "white"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "gray"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "gray"
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: dotSize; height: dotSize
-            color: "white"
-        }
+
+        HourNotch { color: "white" }
+        Gap {}
+        HourNotch { color: "gray" }
+        Gap {}
+        HourNotch { color: "gray" }
+        Gap {}
+        HourNotch { color: "white" }
+        Gap {}
+        HourNotch { color: "gray" }
+        Gap {}
+        HourNotch { color: "gray" }
+        Gap {}
+        HourNotch { color: "white" }
+        Gap {}
+        HourNotch { color: "gray" }
+        Gap {}
+        HourNotch { color: "gray" }
+        Gap {}
+        HourNotch { color: "white" }
+        Gap {}
+        HourNotch { color: "gray" }
+        Gap {}
+        HourNotch { color: "gray" }
+        Gap {}
+        HourNotch { color: "white" }
     }
 
     Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-        anchors.leftMargin: (root.width - dotSize) * (clock.minutesSinceMidnightOrNoon / 720)
-        radius: 100; width: handWidth; height: handHeight
+        anchors.leftMargin: (root.width - root.dotSize) * (clock.minutesSinceMidnightOrNoon / 720)
+        radius: 100; width: root.handWidth; implicitHeight: root.implicitHeight
         color: clock.isPM ? "orange" : "purple"
     }
 }

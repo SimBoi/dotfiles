@@ -33,9 +33,9 @@ Scope {
         ClockBarWidget {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.top
-            width: Screen.width / 3
+            implicitWidth: Screen.width / 3
+            implicitHeight: 40
             dotSize: 10
-            handHeight: 40
             handWidth: 10
         }
 
@@ -43,8 +43,8 @@ Scope {
             anchors.verticalCenter: parent.top
             anchors.left: parent.left
             anchors.leftMargin: Screen.width / 9
-            width: Screen.width / 9
-            height: 10
+            implicitWidth: Screen.width / 9
+            implicitHeight: 20
             gapSize: 4
         }
 

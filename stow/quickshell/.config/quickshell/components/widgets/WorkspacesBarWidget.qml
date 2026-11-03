@@ -1,51 +1,71 @@
 pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell
-import qs.components.basic
+import Quickshell.Widgets
 import Quickshell.Hyprland
 
 Item {
     id: root
 
-    width: 1000
-    height: 20
+    implicitWidth: 1000
+    implicitHeight: 20
     property real gapSize: 4
     property string highlightedColor: "white"
     property string neutralColor: "gray"
     readonly property real workspaceBarSize: (width - gapSize * 5) / 6
 
-    Row {
-        anchors.centerIn: parent
-        width: parent.width
+    WrapperMouseArea {
+        property int scrollAccumulatedY: 0
 
-        Rectangle {
-            radius: 100; width: workspaceBarSize; height: root.height
-            color: Hyprland.focusedWorkspace.id == 1 ? highlightedColor : neutralColor
+        onWheel: event => {
+            if (Math.sign(event.angleDelta.y) !== Math.sign(scrollAccumulatedY))
+                scrollAccumulatedY = 0;
+            scrollAccumulatedY += event.angleDelta.y;
+
+            if (Math.abs(scrollAccumulatedY) >= 120) {
+                const delta = scrollAccumulatedY > 0 ? -1 : 1;
+                Hyprland.dispatch(`hl.dsp.focus({workspace=${Hyprland.focusedWorkspace.id + delta}})`);
+                scrollAccumulatedY = 0;
+                wheel.accepted = true;
+            }
         }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: workspaceBarSize; height: root.height
-            color: Hyprland.focusedWorkspace.id == 2 ? highlightedColor : neutralColor
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: workspaceBarSize; height: root.height
-            color: Hyprland.focusedWorkspace.id == 3 ? highlightedColor : neutralColor
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: workspaceBarSize; height: root.height
-            color: Hyprland.focusedWorkspace.id == 4 ? highlightedColor : neutralColor
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: workspaceBarSize; height: root.height
-            color: Hyprland.focusedWorkspace.id == 5 ? highlightedColor : neutralColor
-        }
-        Item { width: gapSize; height: 1 }
-        Rectangle {
-            radius: 100; width: workspaceBarSize; height: root.height
-            color: Hyprland.focusedWorkspace.id == 6 ? highlightedColor : neutralColor
+
+        Row {
+            anchors.centerIn: parent
+
+            component WorkspaceIndicator: Rectangle {
+                id: workspaceIndicator
+                required property int workspaceId
+
+                anchors.verticalCenter: parent.verticalCenter
+                radius: 100
+                width: root.workspaceBarSize
+                height: Hyprland.focusedWorkspace.id == workspaceId ? root.height : (root.height / 2)
+                color: Hyprland.focusedWorkspace.id == workspaceId ? root.highlightedColor : root.neutralColor
+
+                MouseArea {
+                    width: root.workspaceBarSize + root.gapSize
+                    height: root.height
+
+                    onClicked: Hyprland.dispatch(`hl.dsp.focus({workspace=${workspaceIndicator.workspaceId}})`)
+                }
+            }
+            component Gap: Item {
+                width: root.gapSize
+                height: 1
+            }
+
+            WorkspaceIndicator { workspaceId: 1 }
+            Gap {}
+            WorkspaceIndicator { workspaceId: 2 }
+            Gap {}
+            WorkspaceIndicator { workspaceId: 3 }
+            Gap {}
+            WorkspaceIndicator { workspaceId: 4 }
+            Gap {}
+            WorkspaceIndicator { workspaceId: 5 }
+            Gap {}
+            WorkspaceIndicator { workspaceId: 6 }
         }
     }
 }
