@@ -70,6 +70,11 @@ hl.define_submap("oh31", function()
 	hl.bind(mainMod .. " + Y", hl.dsp.window.move({ workspace = 3 }), { long_press = true })
 	hl.bind(mainMod .. " + L", hl.dsp.window.move({ workspace = 4 }), { long_press = true })
 	hl.bind(mainMod .. " + B", hl.dsp.window.move({ workspace = 5 }), { long_press = true })
+	hl.bind(mainMod .. " + J", hl.dsp.no_op())
+	hl.bind(mainMod .. " + D", hl.dsp.no_op())
+	hl.bind(mainMod .. " + Y", hl.dsp.no_op())
+	hl.bind(mainMod .. " + L", hl.dsp.no_op())
+	hl.bind(mainMod .. " + B", hl.dsp.no_op())
 	-- Tabs inside program
 	hl.bind(mainMod .. " + C", hl.dsp.send_shortcut({ mods = "ALT", key = "1" }))
 	hl.bind(mainMod .. " + S", hl.dsp.send_shortcut({ mods = "ALT", key = "2" }))
@@ -115,8 +120,13 @@ hl.define_submap("GenericKeyboard", function()
 	hl.bind(mainMod .. " + 3", hl.dsp.window.move({ workspace = 3 }), { long_press = true })
 	hl.bind(mainMod .. " + 4", hl.dsp.window.move({ workspace = 4 }), { long_press = true })
 	hl.bind(mainMod .. " + 5", hl.dsp.window.move({ workspace = 5 }), { long_press = true })
+	hl.bind(mainMod .. " + 1", hl.dsp.no_op())
+	hl.bind(mainMod .. " + 2", hl.dsp.no_op())
+	hl.bind(mainMod .. " + 3", hl.dsp.no_op())
+	hl.bind(mainMod .. " + 4", hl.dsp.no_op())
+	hl.bind(mainMod .. " + 5", hl.dsp.no_op())
 	-- TODO switch tabs inside programs
- 
+
     -- Mouse binds
     hl.bind(mainMod .. " + equal", hl.dsp.exec_cmd("cursor-clip"))
     hl.bind(mainMod .. " + mouse:274", hl.dsp.window.close())
