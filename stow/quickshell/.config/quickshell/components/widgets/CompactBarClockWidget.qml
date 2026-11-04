@@ -22,48 +22,57 @@ Item {
         anchors.centerIn: parent
         width: parent.width
 
-        component HourNotch: Rectangle {
-            radius: 100
-            width: root.dotSize
-            implicitHeight: root.dotSize
-        }
-        component Gap: Item {
-            width: root.gapSize
-            implicitHeight: 1 
-        }
+        BoldHourNotch {}
+        Gap {}
+        HourNotch {}
+        Gap {}
+        HourNotch {}
+        Gap {}
+        BoldHourNotch {}
+        Gap {}
+        HourNotch {}
+        Gap {}
+        HourNotch {}
+        Gap {}
+        BoldHourNotch {}
+        Gap {}
+        HourNotch {}
+        Gap {}
+        HourNotch {}
+        Gap {}
+        BoldHourNotch {}
+        Gap {}
+        HourNotch {}
+        Gap {}
+        HourNotch {}
+        Gap {}
+        BoldHourNotch {}
+    }
 
-        HourNotch { color: "white" }
-        Gap {}
-        HourNotch { color: "gray" }
-        Gap {}
-        HourNotch { color: "gray" }
-        Gap {}
-        HourNotch { color: "white" }
-        Gap {}
-        HourNotch { color: "gray" }
-        Gap {}
-        HourNotch { color: "gray" }
-        Gap {}
-        HourNotch { color: "white" }
-        Gap {}
-        HourNotch { color: "gray" }
-        Gap {}
-        HourNotch { color: "gray" }
-        Gap {}
-        HourNotch { color: "white" }
-        Gap {}
-        HourNotch { color: "gray" }
-        Gap {}
-        HourNotch { color: "gray" }
-        Gap {}
-        HourNotch { color: "white" }
+    component BoldHourNotch: Rectangle {
+        radius: 100
+        width: root.dotSize
+        implicitHeight: root.dotSize
+        color: "white"
+    }
+    component HourNotch: Rectangle {
+        radius: 100
+        width: root.dotSize
+        implicitHeight: root.dotSize
+        color: "grey"
+    }
+    component Gap: Item {
+        width: root.gapSize
+        implicitHeight: 1
     }
 
     Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: (root.width - root.dotSize) * (clock.minutesSinceMidnightOrNoon / 720)
-        radius: 100; width: root.handWidth; implicitHeight: root.implicitHeight
+        radius: 100
+        width: root.handWidth
+        implicitHeight: root.implicitHeight
         color: clock.isPM ? "orange" : "purple"
     }
 }

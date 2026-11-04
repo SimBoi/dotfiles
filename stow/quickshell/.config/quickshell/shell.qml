@@ -5,8 +5,5 @@ import Quickshell
 ShellRoot {
     id: root
 
-    Column {
-        Bar {}
-        ScreenCorners {}
-    }
+    Bar {}
 }

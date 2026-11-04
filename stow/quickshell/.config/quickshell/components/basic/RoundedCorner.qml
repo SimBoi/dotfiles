@@ -5,7 +5,12 @@ import QtQuick.Shapes
 Item {
     id: root
 
-    enum CornerEnum { TopLeft, TopRight, BottomLeft, BottomRight }
+    enum CornerEnum {
+        TopLeft,
+        TopRight,
+        BottomLeft,
+        BottomRight
+    }
 
     property var corner: RoundedCorner.CornerEnum.TopLeft
     property int implicitSize: 25
@@ -33,16 +38,20 @@ Item {
             pathHints: ShapePath.PathSolid & ShapePath.PathNonIntersecting
 
             startX: switch (root.corner) {
-                case RoundedCorner.CornerEnum.TopLeft:
-                case RoundedCorner.CornerEnum.BottomLeft: return 0;
-                case RoundedCorner.CornerEnum.TopRight:
-                case RoundedCorner.CornerEnum.BottomRight: return root.implicitSize;
+            case RoundedCorner.CornerEnum.TopLeft:
+            case RoundedCorner.CornerEnum.BottomLeft:
+                return 0;
+            case RoundedCorner.CornerEnum.TopRight:
+            case RoundedCorner.CornerEnum.BottomRight:
+                return root.implicitSize;
             }
             startY: switch (root.corner) {
-                case RoundedCorner.CornerEnum.TopLeft:
-                case RoundedCorner.CornerEnum.TopRight: return 0;
-                case RoundedCorner.CornerEnum.BottomLeft:
-                case RoundedCorner.CornerEnum.BottomRight: return root.implicitSize;
+            case RoundedCorner.CornerEnum.TopLeft:
+            case RoundedCorner.CornerEnum.TopRight:
+                return 0;
+            case RoundedCorner.CornerEnum.BottomLeft:
+            case RoundedCorner.CornerEnum.BottomRight:
+                return root.implicitSize;
             }
             PathAngleArc {
                 moveToStart: false
@@ -51,10 +60,14 @@ Item {
                 radiusX: root.implicitSize
                 radiusY: root.implicitSize
                 startAngle: switch (root.corner) {
-                    case RoundedCorner.CornerEnum.TopLeft: return 180;
-                    case RoundedCorner.CornerEnum.TopRight: return -90;
-                    case RoundedCorner.CornerEnum.BottomLeft: return 90;
-                    case RoundedCorner.CornerEnum.BottomRight: return 0;
+                case RoundedCorner.CornerEnum.TopLeft:
+                    return 180;
+                case RoundedCorner.CornerEnum.TopRight:
+                    return -90;
+                case RoundedCorner.CornerEnum.BottomLeft:
+                    return 90;
+                case RoundedCorner.CornerEnum.BottomRight:
+                    return 0;
                 }
                 sweepAngle: 90
             }
