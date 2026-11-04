@@ -4,6 +4,7 @@ import Quickshell
 import qs.components.widgets
 import qs.components.basic
 import Quickshell.Wayland
+import Quickshell.Hyprland
 
 Scope {
     enum BarState {
@@ -29,14 +30,14 @@ Scope {
         // dynamic bar
         Rectangle {
             id: dynamicBar
-            property var state: BarState.Compact
+            property var state: Bar.BarState.Compact
             property bool hovered: false
             property int compactHeight: 12
-            property int expandedHeight: 200
+            property int expandedHeight: 50
 
             color: "black"
-            implicitWidth: 1000
-            implicitHeight: 20
+            implicitWidth: parent.width
+            implicitHeight: compactHeight
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
 
@@ -45,8 +46,8 @@ Scope {
                 interval: 1000
                 triggeredOnStart: true
                 onTriggered: {
-                    hovered = false;
-                    compact();
+                    dynamicBar.hovered = false;
+                    dynamicBar.compact();
                 }
             }
 
@@ -54,53 +55,74 @@ Scope {
                 anchors.fill: parent
                 hoverEnabled: true
                 onEntered: {
-                    hovered = true;
-                    expand();
+                    dynamicBar.hovered = true;
+                    dynamicBar.expand();
                     hoverDelayTimer.stop();
                 }
                 onExited: hoverDelayTimer.restart()
             }
 
             function compact() {
-                if (state.Popped)
+                if (state == Bar.BarState.Popped)
                     return;
 
-                state = BarState.Compact;
+                state = Bar.BarState.Compact;
                 anchors.topMargin = 0;
                 implicitWidth = parent.width;
                 implicitHeight = compactHeight;
             }
 
             function expand() {
-                if (state.Popped)
+                if (state == Bar.BarState.Popped)
                     return;
 
-                state = BarState.Expanded;
+                state = Bar.BarState.Expanded;
                 anchors.topMargin = 0;
                 implicitWidth = parent.width;
                 implicitHeight = expandedHeight;
             }
 
             function pop() {
-                state = BarState.Popped;
-                color = "white"
+                state = Bar.BarState.Popped;
                 anchors.topMargin = 100;
                 implicitWidth = 300;
                 implicitHeight = 200;
             }
 
             function attach() {
-                if (hovered)
-                    expand();
+                if (dynamicBar.hovered)
+                    dynamicBar.expand();
                 else
-                    compact();
+                    dynamicBar.compact();
+            }
+
+            PanelWindow {
+                id: dynamicPopup
+                visible: dynamicBar.state == Bar.BarState.Popped
+
+                HyprlandFocusGrab {
+                    id: grab
+                    windows: [dynamicPopup]
+                    active: dynamicBar.state == Bar.BarState.Popped
+                    onCleared: dynamicBar.attach()
+                }
+
+                Text {
+                    anchors.centerIn: parent
+                    text: "hello"
+
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: dynamicBar.attach()
+                    }
+                }
             }
         }
 
         // compact bar widgets
         Item {
             anchors.fill: dynamicBar
-            visible: dynamicBar.state == BarState.Compact
+            visible: dynamicBar.state == Bar.BarState.Compact
 
             CompactBarClockWidget {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -133,7 +155,7 @@ Scope {
         // expanded bar widgets
         Item {
             anchors.fill: dynamicBar
-            visible: dynamicBar.state == BarState.Expanded
+            visible: dynamicBar.state == Bar.BarState.Expanded
 
             ExpandedBarClockWidget {
                 anchors.centerIn: parent
@@ -153,6 +175,7 @@ Scope {
             right: true
             bottom: true
         }
+        exclusionMode: ExclusionMode.Ignore
         mask: Region {}
 
         RoundedCorner {
@@ -161,7 +184,7 @@ Scope {
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.topMargin: {
-                if (dynamicBar.state == BarState.Compact || dynamicBar.state == BarState.Expanded)
+                if (dynamicBar.state == Bar.BarState.Compact || dynamicBar.state == Bar.BarState.Expanded)
                     return dynamicBar.height;
                 return 0;
             }
@@ -172,7 +195,7 @@ Scope {
             anchors.top: parent.top
             anchors.right: parent.right
             anchors.topMargin: {
-                if (dynamicBar.state == BarState.Compact || dynamicBar.state == BarState.Expanded)
+                if (dynamicBar.state == Bar.BarState.Compact || dynamicBar.state == Bar.BarState.Expanded)
                     return dynamicBar.height;
                 return 0;
             }
