@@ -6,9 +6,11 @@ import qs.components.basic
 import Quickshell.Wayland
 
 Scope {
-    id: root
-    property int compactBarHeight: 12
-    property int expandedBarHeight: 40
+    enum BarState {
+        Compact,
+        Expanded,
+        Popped
+    }
 
     // bar
     PanelWindow {
@@ -17,34 +19,88 @@ Scope {
             left: true
             right: true
         }
-        exclusiveZone: root.compactBarHeight
+        exclusiveZone: dynamicBar.compactHeight
         color: "transparent"
         mask: Region {
             item: dynamicBar
         }
+        implicitHeight: 500
 
         // dynamic bar
         Rectangle {
             id: dynamicBar
-            property bool hovered
+            property var state: BarState.Compact
+            property bool hovered: false
+            property int compactHeight: 12
+            property int expandedHeight: 200
 
-            implicitWidth: parent.width
-            implicitHeight: hovered ? root.expandedBarHeight : root.compactBarHeight
             color: "black"
+            implicitWidth: 1000
+            implicitHeight: 20
+            anchors.top: parent.top
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            Timer {
+                id: hoverDelayTimer
+                interval: 1000
+                triggeredOnStart: true
+                onTriggered: {
+                    hovered = false;
+                    compact();
+                }
+            }
 
             MouseArea {
                 anchors.fill: parent
                 hoverEnabled: true
-                onEntered: dynamicBar.hovered = true
-                onExited: dynamicBar.hovered = false
+                onEntered: {
+                    hovered = true;
+                    expand();
+                    hoverDelayTimer.stop();
+                }
+                onExited: hoverDelayTimer.restart()
+            }
+
+            function compact() {
+                if (state.Popped)
+                    return;
+
+                state = BarState.Compact;
+                anchors.topMargin = 0;
+                implicitWidth = parent.width;
+                implicitHeight = compactHeight;
+            }
+
+            function expand() {
+                if (state.Popped)
+                    return;
+
+                state = BarState.Expanded;
+                anchors.topMargin = 0;
+                implicitWidth = parent.width;
+                implicitHeight = expandedHeight;
+            }
+
+            function pop() {
+                state = BarState.Popped;
+                color = "white"
+                anchors.topMargin = 100;
+                implicitWidth = 300;
+                implicitHeight = 200;
+            }
+
+            function attach() {
+                if (hovered)
+                    expand();
+                else
+                    compact();
             }
         }
 
         // compact bar widgets
         Item {
-            anchors.centerIn: parent
-            anchors.fill: parent
-            visible: !dynamicBar.hovered
+            anchors.fill: dynamicBar
+            visible: dynamicBar.state == BarState.Compact
 
             CompactBarClockWidget {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -76,9 +132,12 @@ Scope {
 
         // expanded bar widgets
         Item {
-            anchors.centerIn: parent
-            anchors.fill: parent
-            visible: dynamicBar.hovered
+            anchors.fill: dynamicBar
+            visible: dynamicBar.state == BarState.Expanded
+
+            ExpandedBarClockWidget {
+                anchors.centerIn: parent
+            }
         }
     }
 
@@ -101,14 +160,22 @@ Scope {
             implicitSize: screenCorners.implicitSize
             anchors.top: parent.top
             anchors.left: parent.left
-            anchors.topMargin: dynamicBar.hovered ? root.expandedBarHeight - root.compactBarHeight : 0
+            anchors.topMargin: {
+                if (dynamicBar.state == BarState.Compact || dynamicBar.state == BarState.Expanded)
+                    return dynamicBar.height;
+                return 0;
+            }
         }
         RoundedCorner {
             corner: RoundedCorner.CornerEnum.TopRight
             implicitSize: screenCorners.implicitSize
             anchors.top: parent.top
             anchors.right: parent.right
-            anchors.topMargin: dynamicBar.hovered ? root.expandedBarHeight - root.compactBarHeight : 0
+            anchors.topMargin: {
+                if (dynamicBar.state == BarState.Compact || dynamicBar.state == BarState.Expanded)
+                    return dynamicBar.height;
+                return 0;
+            }
         }
         RoundedCorner {
             corner: RoundedCorner.CornerEnum.BottomLeft
