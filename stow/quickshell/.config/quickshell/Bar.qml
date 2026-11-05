@@ -10,11 +10,12 @@ Scope {
     enum BarState {
         Compact,
         Expanded,
-        Popped
+        Popped,
+        Attaching
     }
 
-    // bar
     PanelWindow {
+        id: barPanel
         anchors {
             top: true
             left: true
@@ -25,9 +26,8 @@ Scope {
         mask: Region {
             item: dynamicBar
         }
-        implicitHeight: 500
+        implicitHeight: Screen.height
 
-        // dynamic bar
         Rectangle {
             id: dynamicBar
             property var state: Bar.BarState.Compact
@@ -44,7 +44,6 @@ Scope {
             Timer {
                 id: hoverDelayTimer
                 interval: 1000
-                triggeredOnStart: true
                 onTriggered: {
                     dynamicBar.hovered = false;
                     dynamicBar.compact();
@@ -52,7 +51,8 @@ Scope {
             }
 
             MouseArea {
-                anchors.fill: parent
+                id: hoverArea
+                anchors.fill: dynamicBar
                 hoverEnabled: true
                 onEntered: {
                     dynamicBar.hovered = true;
@@ -62,8 +62,29 @@ Scope {
                 onExited: hoverDelayTimer.restart()
             }
 
+            PanelWindow {
+                id: popupDismissalArea
+                visible: dynamicBar.state == Bar.BarState.Popped
+                anchors {
+                    top: true
+                    left: true
+                    right: true
+                    bottom: true
+                }
+                color: "transparent"
+                mask: Region {
+                    item: dynamicBar
+                    intersection: Intersection.Xor
+                }
+                exclusionMode: ExclusionMode.Ignore
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: dynamicBar.attach()
+                }
+            }
+
             function compact() {
-                if (state == Bar.BarState.Popped)
+                if (state == Bar.BarState.Compact || state == Bar.BarState.Popped)
                     return;
 
                 state = Bar.BarState.Compact;
@@ -73,7 +94,7 @@ Scope {
             }
 
             function expand() {
-                if (state == Bar.BarState.Popped)
+                if (state == Bar.BarState.Expanded || state == Bar.BarState.Popped)
                     return;
 
                 state = Bar.BarState.Expanded;
@@ -83,6 +104,8 @@ Scope {
             }
 
             function pop() {
+                if (state == Bar.BarState.Popped)
+                    return;
                 state = Bar.BarState.Popped;
                 anchors.topMargin = 100;
                 implicitWidth = 300;
@@ -90,70 +113,41 @@ Scope {
             }
 
             function attach() {
+                if (state != Bar.BarState.Popped)
+                    return;
+                state = Bar.BarState.Attaching;
                 if (dynamicBar.hovered)
                     dynamicBar.expand();
                 else
                     dynamicBar.compact();
             }
-
-            PanelWindow {
-                id: dynamicPopup
-                visible: dynamicBar.state == Bar.BarState.Popped
-
-                HyprlandFocusGrab {
-                    id: grab
-                    windows: [dynamicPopup]
-                    active: dynamicBar.state == Bar.BarState.Popped
-                    onCleared: dynamicBar.attach()
-                }
-
-                Text {
-                    anchors.centerIn: parent
-                    text: "hello"
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: dynamicBar.attach()
-                    }
-                }
-            }
         }
 
-        // compact bar widgets
         Item {
+            id: compactBarWidgets
             anchors.fill: dynamicBar
             visible: dynamicBar.state == Bar.BarState.Compact
 
             CompactBarClockWidget {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.top
-                implicitWidth: Screen.width / 3
-                implicitHeight: 40
-                dotSize: 10
-                handWidth: 10
             }
 
             CompactBarWorkspacesWidget {
                 anchors.verticalCenter: parent.top
                 anchors.left: parent.left
                 anchors.leftMargin: Screen.width / 9
-                implicitWidth: Screen.width / 9
-                implicitHeight: 20
-                gapSize: 4
             }
 
             CompactBarBatteryWidget {
                 anchors.verticalCenter: parent.top
                 anchors.right: parent.right
                 anchors.rightMargin: Screen.width / 9
-                valueBarWidth: Screen.width / 9
-                valueBarHeight: 10
-                showStopPoint: false
             }
         }
 
-        // expanded bar widgets
         Item {
+            id: expandedBarWidgets
             anchors.fill: dynamicBar
             visible: dynamicBar.state == Bar.BarState.Expanded
 
@@ -163,7 +157,6 @@ Scope {
         }
     }
 
-    // screen corners
     PanelWindow {
         id: screenCorners
         property int implicitSize: 20

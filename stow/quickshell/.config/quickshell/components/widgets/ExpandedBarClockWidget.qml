@@ -12,9 +12,7 @@ Rectangle {
 
         MouseArea {
             anchors.fill: parent
-            hoverEnabled: true
-            onEntered: dynamicBar.pop()
-            onExited: dynamicBar.attach()
+            onClicked: dynamicBar.pop()
         }
     }
 }

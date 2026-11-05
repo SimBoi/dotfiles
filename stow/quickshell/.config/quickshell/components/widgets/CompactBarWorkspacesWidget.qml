@@ -7,12 +7,12 @@ import Quickshell.Hyprland
 Item {
     id: root
 
-    implicitWidth: 1000
-    implicitHeight: 20
     property real gapSize: 4
     property string highlightedColor: "white"
     property string neutralColor: "gray"
     readonly property real workspaceBarSize: (width - gapSize * 5) / 6
+    implicitWidth: Screen.width / 9
+    implicitHeight: 20
 
     WrapperMouseArea {
         property int scrollAccumulatedY: 0

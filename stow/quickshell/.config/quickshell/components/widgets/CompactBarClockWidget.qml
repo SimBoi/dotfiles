@@ -8,7 +8,7 @@ Item {
     property int dotSize: 10
     property int handWidth: 10
     readonly property real gapSize: (width - dotSize * 13) / 12
-    implicitWidth: 1000
+    implicitWidth: Screen.width / 3
     implicitHeight: 40
 
     SystemClock {
