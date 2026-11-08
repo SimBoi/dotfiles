@@ -12,7 +12,7 @@ Rectangle {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: dynamicBar.pop()
+            onClicked: barPanel.pop()
         }
     }
 }

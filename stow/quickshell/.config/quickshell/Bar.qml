@@ -7,15 +7,10 @@ import Quickshell.Wayland
 import Quickshell.Hyprland
 
 Scope {
-    enum BarState {
-        Compact,
-        Expanded,
-        Popped,
-        Attaching
-    }
-
     PanelWindow {
         id: barPanel
+        property bool expanded: false
+        property bool popped: false
         anchors {
             top: true
             left: true
@@ -25,13 +20,56 @@ Scope {
         color: "transparent"
         mask: Region {
             item: dynamicBar
+            Region {
+                item: dynamicPopoutPanel
+            }
         }
         implicitHeight: Screen.height
 
+        MouseArea {
+            id: hoverArea
+            property bool hovered: false
+            anchors.fill: parent
+            hoverEnabled: true
+            onEntered: {
+                hovered = true;
+                barPanel.expand();
+                compactTimer.stop();
+            }
+            onExited: compactTimer.restart()
+            Timer {
+                id: compactTimer
+                interval: 1000
+                onTriggered: {
+                    hoverArea.hovered = false;
+                    barPanel.compact();
+                }
+            }
+        }
+
+        PanelWindow {
+            id: popoutDismissalArea
+            visible: barPanel.popped
+            anchors {
+                top: true
+                left: true
+                right: true
+                bottom: true
+            }
+            color: "transparent"
+            mask: Region {
+                item: dynamicBar
+                intersection: Intersection.Xor
+            }
+            exclusionMode: ExclusionMode.Ignore
+            MouseArea {
+                anchors.fill: parent
+                onClicked: barPanel.attach()
+            }
+        }
+
         Rectangle {
             id: dynamicBar
-            property var state: Bar.BarState.Compact
-            property bool hovered: false
             property int compactHeight: 12
             property int expandedHeight: 50
 
@@ -41,92 +79,20 @@ Scope {
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
 
-            Timer {
-                id: hoverDelayTimer
-                interval: 1000
-                onTriggered: {
-                    dynamicBar.hovered = false;
-                    dynamicBar.compact();
-                }
-            }
-
-            MouseArea {
-                id: hoverArea
-                anchors.fill: dynamicBar
-                hoverEnabled: true
-                onEntered: {
-                    dynamicBar.hovered = true;
-                    dynamicBar.expand();
-                    hoverDelayTimer.stop();
-                }
-                onExited: hoverDelayTimer.restart()
-            }
-
-            PanelWindow {
-                id: popupDismissalArea
-                visible: dynamicBar.state == Bar.BarState.Popped
-                anchors {
-                    top: true
-                    left: true
-                    right: true
-                    bottom: true
-                }
-                color: "transparent"
-                mask: Region {
-                    item: dynamicBar
-                    intersection: Intersection.Xor
-                }
-                exclusionMode: ExclusionMode.Ignore
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: dynamicBar.attach()
-                }
-            }
-
-            function compact() {
-                if (state == Bar.BarState.Compact || state == Bar.BarState.Popped)
-                    return;
-
-                state = Bar.BarState.Compact;
-                anchors.topMargin = 0;
-                implicitWidth = parent.width;
-                implicitHeight = compactHeight;
-            }
-
-            function expand() {
-                if (state == Bar.BarState.Expanded || state == Bar.BarState.Popped)
-                    return;
-
-                state = Bar.BarState.Expanded;
-                anchors.topMargin = 0;
-                implicitWidth = parent.width;
-                implicitHeight = expandedHeight;
-            }
-
-            function pop() {
-                if (state == Bar.BarState.Popped)
-                    return;
-                state = Bar.BarState.Popped;
-                anchors.topMargin = 100;
-                implicitWidth = 300;
-                implicitHeight = 200;
-            }
-
-            function attach() {
-                if (state != Bar.BarState.Popped)
-                    return;
-                state = Bar.BarState.Attaching;
-                if (dynamicBar.hovered)
-                    dynamicBar.expand();
-                else
-                    dynamicBar.compact();
+            Rectangle {
+                id: dynamicPopoutPanel
+                color: "black"
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
+                implicitHeight: 100
+                implicitWidth: 100
             }
         }
 
         Item {
             id: compactBarWidgets
             anchors.fill: dynamicBar
-            visible: dynamicBar.state == Bar.BarState.Compact
+            visible: !barPanel.expanded
 
             CompactBarClockWidget {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -149,11 +115,45 @@ Scope {
         Item {
             id: expandedBarWidgets
             anchors.fill: dynamicBar
-            visible: dynamicBar.state == Bar.BarState.Expanded
+            visible: barPanel.expanded
 
             ExpandedBarClockWidget {
                 anchors.centerIn: parent
             }
+        }
+
+        function compact() {
+            if (!barPanel.expanded || barPanel.popped)
+                return;
+
+            barPanel.expanded = false;
+            dynamicBar.implicitHeight = dynamicBar.compactHeight;
+        }
+
+        function expand() {
+            if (barPanel.expanded || barPanel.popped)
+                return;
+
+            barPanel.expanded = true;
+            dynamicBar.implicitHeight = dynamicBar.expandedHeight;
+        }
+
+        function pop() {
+            if (barPanel.popped)
+                return;
+            barPanel.popped = true;
+            dynamicBar.implicitHeight = dynamicBar.expandedHeight;
+            dynamicPopoutPanel.anchors.top = dynamicBar.bottom
+        }
+
+        function attach() {
+            if (!barPanel.popped)
+                return;
+            barPanel.popped = false;
+            if (hoverArea.hovered)
+                barPanel.expand();
+            else
+                barPanel.compact();
         }
     }
 
@@ -176,22 +176,14 @@ Scope {
             implicitSize: screenCorners.implicitSize
             anchors.top: parent.top
             anchors.left: parent.left
-            anchors.topMargin: {
-                if (dynamicBar.state == Bar.BarState.Compact || dynamicBar.state == Bar.BarState.Expanded)
-                    return dynamicBar.height;
-                return 0;
-            }
+            anchors.topMargin: dynamicBar.height
         }
         RoundedCorner {
             corner: RoundedCorner.CornerEnum.TopRight
             implicitSize: screenCorners.implicitSize
             anchors.top: parent.top
             anchors.right: parent.right
-            anchors.topMargin: {
-                if (dynamicBar.state == Bar.BarState.Compact || dynamicBar.state == Bar.BarState.Expanded)
-                    return dynamicBar.height;
-                return 0;
-            }
+            anchors.topMargin: dynamicBar.height
         }
         RoundedCorner {
             corner: RoundedCorner.CornerEnum.BottomLeft
