@@ -9,8 +9,6 @@ import Quickshell.Hyprland
 Scope {
     PanelWindow {
         id: barPanel
-        property bool expanded: false
-        property bool popped: false
         anchors {
             top: true
             left: true
@@ -26,46 +24,8 @@ Scope {
         }
         implicitHeight: Screen.height
 
-        MouseArea {
-            id: hoverArea
-            property bool hovered: false
-            anchors.fill: parent
-            hoverEnabled: true
-            onEntered: {
-                hovered = true;
-                barPanel.expand();
-                compactTimer.stop();
-            }
-            onExited: compactTimer.restart()
-            Timer {
-                id: compactTimer
-                interval: 1000
-                onTriggered: {
-                    hoverArea.hovered = false;
-                    barPanel.compact();
-                }
-            }
-        }
-
-        PanelWindow {
-            id: popoutDismissalArea
-            visible: barPanel.popped
-            anchors {
-                top: true
-                left: true
-                right: true
-                bottom: true
-            }
-            color: "transparent"
-            mask: Region {
-                item: dynamicBar
-                intersection: Intersection.Xor
-            }
-            exclusionMode: ExclusionMode.Ignore
-            MouseArea {
-                anchors.fill: parent
-                onClicked: barPanel.attach()
-            }
+        BarState {
+            id: barState
         }
 
         Rectangle {
@@ -78,21 +38,26 @@ Scope {
             implicitHeight: compactHeight
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
+        }
 
-            Rectangle {
-                id: dynamicPopoutPanel
-                color: "black"
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.bottom: parent.bottom
-                implicitHeight: 100
-                implicitWidth: 100
+        Rectangle {
+            id: dynamicPopoutPanel
+            color: "black"
+            anchors.bottom: dynamicBar.bottom
+            height: dynamicPopoutLoader.height + 200
+            width: dynamicPopoutLoader.width + 200
+            x: dynamicBar.x + (dynamicBar.width - width) / 2 
+
+            Loader {
+                id: dynamicPopoutLoader
+                anchors.centerIn: parent
             }
         }
 
         Item {
             id: compactBarWidgets
             anchors.fill: dynamicBar
-            visible: !barPanel.expanded
+            visible: barState.state == BarState.Compact
 
             CompactBarClockWidget {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -115,45 +80,12 @@ Scope {
         Item {
             id: expandedBarWidgets
             anchors.fill: dynamicBar
-            visible: barPanel.expanded
+            visible: barState.state != BarState.Compact
 
+            ExpandedBarPowerWidget {}
             ExpandedBarClockWidget {
                 anchors.centerIn: parent
             }
-        }
-
-        function compact() {
-            if (!barPanel.expanded || barPanel.popped)
-                return;
-
-            barPanel.expanded = false;
-            dynamicBar.implicitHeight = dynamicBar.compactHeight;
-        }
-
-        function expand() {
-            if (barPanel.expanded || barPanel.popped)
-                return;
-
-            barPanel.expanded = true;
-            dynamicBar.implicitHeight = dynamicBar.expandedHeight;
-        }
-
-        function pop() {
-            if (barPanel.popped)
-                return;
-            barPanel.popped = true;
-            dynamicBar.implicitHeight = dynamicBar.expandedHeight;
-            dynamicPopoutPanel.anchors.top = dynamicBar.bottom
-        }
-
-        function attach() {
-            if (!barPanel.popped)
-                return;
-            barPanel.popped = false;
-            if (hoverArea.hovered)
-                barPanel.expand();
-            else
-                barPanel.compact();
         }
     }
 

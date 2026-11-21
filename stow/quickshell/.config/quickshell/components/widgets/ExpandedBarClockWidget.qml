@@ -12,7 +12,7 @@ Rectangle {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: barPanel.pop()
+            onClicked: barState.pop("components/widgets/PopoutClockWidget.qml")
         }
     }
 }
