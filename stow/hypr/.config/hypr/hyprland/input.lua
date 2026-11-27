@@ -100,7 +100,7 @@ hl.define_submap("GenericKeyboard", function()
 	hl.bind("Print", hl.dsp.global("caelestia:screenshotFreezeClip"))
 	hl.bind(secondaryMod .. " + Print", hl.dsp.global("caelestia:screenshotFreeze"))
 	-- Launcher
-	hl.bind(mainMod .. " + R", hl.dsp.global("caelestia:launcher"))
+	hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("rofi -show drun"))
 	-- Window management
 	hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("kitty"))
 	hl.bind(mainMod .. " + Q", hl.dsp.window.close())

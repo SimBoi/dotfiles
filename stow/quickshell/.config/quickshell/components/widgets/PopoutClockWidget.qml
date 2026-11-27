@@ -3,7 +3,7 @@ import QtQuick
 
 Rectangle {
     implicitHeight: 50
-    implicitWidth: 300
+    implicitWidth: 400
     radius: 100
 
     Text {

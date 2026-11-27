@@ -29,6 +29,20 @@ Scope {
         }
 
         Rectangle {
+            id: dynamicPopoutPanel
+            color: "black"
+            anchors.bottom: dynamicBar.bottom
+            height: dynamicPopoutLoader.height + 200
+            width: dynamicPopoutLoader.width + 200
+            x: dynamicBar.x + (dynamicBar.width - width) / 2
+
+            Loader {
+                id: dynamicPopoutLoader
+                anchors.centerIn: parent
+            }
+        }
+
+        Rectangle {
             id: dynamicBar
             property int compactHeight: 12
             property int expandedHeight: 50
@@ -38,20 +52,6 @@ Scope {
             implicitHeight: compactHeight
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
-        }
-
-        Rectangle {
-            id: dynamicPopoutPanel
-            color: "black"
-            anchors.bottom: dynamicBar.bottom
-            height: dynamicPopoutLoader.height + 200
-            width: dynamicPopoutLoader.width + 200
-            x: dynamicBar.x + (dynamicBar.width - width) / 2 
-
-            Loader {
-                id: dynamicPopoutLoader
-                anchors.centerIn: parent
-            }
         }
 
         Item {
@@ -82,9 +82,29 @@ Scope {
             anchors.fill: dynamicBar
             visible: barState.state != BarState.Compact
 
-            ExpandedBarPowerWidget {}
-            ExpandedBarClockWidget {
+            Row {
+                anchors.left: parent.left
+                layoutDirection: Qt.LeftToRight
+                spacing: 10
+                padding: 10
+                ExpandedBarPowerWidget {}
+            }
+            Row {
                 anchors.centerIn: parent
+                layoutDirection: Qt.LeftToRight
+                spacing: 10
+                padding: spacing
+                ExpandedBarClockWidget {}
+            }
+            Row {
+                anchors.right: parent.right
+                layoutDirection: Qt.RightToLeft
+                spacing: 10
+                padding: spacing
+                ExpandedBarSystemMonitorWidget {}
+                StyledText {
+                    text: "Hello \uf4bc"
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 pragma ComponentBehavior: Bound
 import QtQuick
-import qs.components.icons
+import qs.components.basic
 
 Rectangle {
     id: root
@@ -8,8 +8,9 @@ Rectangle {
     implicitWidth: 30
     radius: 100
 
-    PowerIcon {
+    StyledText {
         anchors.centerIn: parent
+        text: "\uf011"
     }
 
     HoverHandler {
